@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SnowLeopard.DesignPattern
+namespace SnowLeopard
 {
     /// <summary>
     /// A provider or subject, which is the object that sends notifications to observers. 
