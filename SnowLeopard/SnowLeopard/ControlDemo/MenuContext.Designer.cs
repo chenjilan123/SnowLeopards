@@ -1,4 +1,4 @@
-﻿namespace SnowLeopard
+﻿namespace SnowLeopard.ControlDemo
 {
     partial class MenuContext
     {
@@ -43,12 +43,13 @@
             // 
             this.ShowContext.BackColor = System.Drawing.Color.Transparent;
             this.ShowContext.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.ShowContext.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ShowContext.DownBack = null;
-            this.ShowContext.Location = new System.Drawing.Point(11, 52);
+            this.ShowContext.Location = new System.Drawing.Point(8, 39);
             this.ShowContext.MouseBack = null;
             this.ShowContext.Name = "ShowContext";
             this.ShowContext.NormlBack = null;
-            this.ShowContext.Size = new System.Drawing.Size(114, 52);
+            this.ShowContext.Size = new System.Drawing.Size(265, 105);
             this.ShowContext.TabIndex = 0;
             this.ShowContext.Text = "显示菜单";
             this.ShowContext.UseVisualStyleBackColor = false;
@@ -89,38 +90,38 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(83, 22);
             this.toolStripMenuItem2.Text = "1";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(83, 22);
             this.toolStripMenuItem3.Text = "2";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(83, 22);
             this.toolStripMenuItem4.Text = "3";
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(83, 22);
             this.toolStripMenuItem5.Text = "4";
             // 
             // toolStripMenuItem6
             // 
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(83, 22);
             this.toolStripMenuItem6.Text = "5";
             // 
             // MenuContext
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 129);
+            this.ClientSize = new System.Drawing.Size(281, 152);
             this.Controls.Add(this.ShowContext);
             this.Name = "MenuContext";
             this.ShowIcon = false;

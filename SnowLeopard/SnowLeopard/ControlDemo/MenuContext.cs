@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SnowLeopard
+namespace SnowLeopard.ControlDemo
 {
     public partial class MenuContext : Skin_Color
     {
