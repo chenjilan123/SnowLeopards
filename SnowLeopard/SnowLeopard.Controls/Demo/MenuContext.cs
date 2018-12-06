@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SnowLeopard.ControlDemo
+namespace SnowLeopard.Controls.Demo
 {
-    public partial class MenuContext : Skin_Color
+    public partial class MenuContext : BlueForm
     {
         public MenuContext()
         {

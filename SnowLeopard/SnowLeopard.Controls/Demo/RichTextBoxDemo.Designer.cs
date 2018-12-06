@@ -1,4 +1,4 @@
-﻿namespace SnowLeopard.ControlDemo
+﻿namespace SnowLeopard.Controls.Demo
 {
     partial class RichTextBoxDemo
     {
@@ -39,7 +39,7 @@
             this.TextArea.Dock = System.Windows.Forms.DockStyle.Top;
             this.TextArea.Location = new System.Drawing.Point(8, 39);
             this.TextArea.Name = "TextArea";
-            this.TextArea.Size = new System.Drawing.Size(276, 181);
+            this.TextArea.Size = new System.Drawing.Size(411, 181);
             this.TextArea.TabIndex = 0;
             this.TextArea.Text = "";
             // 
@@ -49,7 +49,7 @@
             this.skinButton1.BackColor = System.Drawing.Color.Transparent;
             this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinButton1.DownBack = null;
-            this.skinButton1.Location = new System.Drawing.Point(209, 226);
+            this.skinButton1.Location = new System.Drawing.Point(344, 225);
             this.skinButton1.MouseBack = null;
             this.skinButton1.Name = "skinButton1";
             this.skinButton1.NormlBack = null;
@@ -62,7 +62,7 @@
             // RichTextBoxDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.ClientSize = new System.Drawing.Size(292, 256);
+            this.ClientSize = new System.Drawing.Size(427, 255);
             this.Controls.Add(this.skinButton1);
             this.Controls.Add(this.TextArea);
             this.Name = "RichTextBoxDemo";

@@ -14,12 +14,14 @@ namespace SnowLeopard
 {
     public partial class Main : Skin_Color
     {
+        private const string AssemblyName = "SnowLeopard.Controls";
+        private const string PrefixNamespace = "SnowLeopard.Controls.Demo";
         private Assembly _assembly = null;
         private Dictionary<string, dynamic> _formInstances = new Dictionary<string, dynamic>();
         public Main()
         {
             InitializeComponent();
-            _assembly = Assembly.GetExecutingAssembly();
+            _assembly = Assembly.Load(AssemblyName);
             var types = _assembly.GetTypes();
             foreach (var item in types)
             {
@@ -31,13 +33,13 @@ namespace SnowLeopard
             }
             SelectForm.SelectedIndex = 0;
         }
-        private const string PrefixNamespace = "SnowLeopard.ControlDemo";
+
         private void skinButton1_Click(object sender, EventArgs e)
         {
             try
             {
                 var typeName = $"{PrefixNamespace}.{SelectForm.SelectedItem.ToString()}";
-                var type = Type.GetType(typeName);
+                var type = _assembly.GetType(typeName);
                 if (type == null)
                 {
                     MessageBox.Show("Current selected item is invalid.");

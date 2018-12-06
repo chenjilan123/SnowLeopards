@@ -1,4 +1,4 @@
-﻿namespace SnowLeopard.ControlDemo
+﻿namespace SnowLeopard.Controls.Demo
 {
     partial class MenuContext
     {

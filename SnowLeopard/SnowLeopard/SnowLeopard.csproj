@@ -51,34 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlDemo\RichTextBoxDemo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlDemo\RichTextBoxDemo.Designer.cs">
-      <DependentUpon>RichTextBoxDemo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControlDemo\MenuContext.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ControlDemo\MenuContext.Designer.cs">
-      <DependentUpon>MenuContext.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ControlDemo\RichTextBoxDemo.resx">
-      <DependentUpon>RichTextBoxDemo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ControlDemo\MenuContext.resx">
-      <DependentUpon>MenuContext.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,6 +88,12 @@
     <Content Include="Skin\CSkin.dll" />
     <Content Include="Skin\CSkin更新文档.txt" />
     <Content Include="Skin\【必看】使用教程.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnowLeopard.Controls\SnowLeopard.Controls.csproj">
+      <Project>{8de4aa91-59ab-4f6e-87c4-780be658166f}</Project>
+      <Name>SnowLeopard.Controls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
