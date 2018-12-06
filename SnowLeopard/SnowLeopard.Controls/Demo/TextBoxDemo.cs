@@ -19,6 +19,9 @@ namespace SnowLeopard.Controls.Demo
         {
             //MessageBox.Show(skinTextBox1.Text);
             MessageBox.Show(textBox1.Text);
+
+
         }
+        
     }
 }
