@@ -16,5 +16,10 @@ namespace SnowLeopard.WFs
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label1.Text += label1.Text;
+        }
     }
 }
