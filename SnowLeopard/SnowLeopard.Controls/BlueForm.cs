@@ -17,5 +17,9 @@ namespace SnowLeopard.Controls
         {
             InitializeComponent();
         }
+
+        private void axTV1_Enter(object sender, EventArgs e)
+        {
+        }
     }
 }
