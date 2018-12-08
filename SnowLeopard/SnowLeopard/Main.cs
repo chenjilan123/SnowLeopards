@@ -17,7 +17,8 @@ namespace SnowLeopard
         private const string AssemblyName = "SnowLeopard.Controls";
         private const string PrefixNamespace = "SnowLeopard.Controls.Demo";
         private Assembly _assembly = null;
-        private Dictionary<string, dynamic> _formInstances = new Dictionary<string, dynamic>();
+        //private Dictionary<string, dynamic> _formInstances = new Dictionary<string, dynamic>();
+        private Dictionary<string, Form> _formInstances = new Dictionary<string, Form>();
         public Main()
         {
             InitializeComponent();
@@ -28,7 +29,8 @@ namespace SnowLeopard
             var types = _assembly.GetTypes();
             foreach (var item in types)
             {
-                if (item.Namespace != PrefixNamespace)
+                
+                if (item.Namespace != PrefixNamespace || !item.IsSubclassOf(typeof(Form)))
                 {
                     continue;
                 }
@@ -51,25 +53,25 @@ namespace SnowLeopard
                     MessageBox.Show("Current selected item is invalid.");
                     return;
                 }
-                dynamic instance;
+                Form form;
                 if (_formInstances.ContainsKey(type.FullName))
                 {
-                    instance = _formInstances[type.FullName];
+                    form = _formInstances[type.FullName];
                 }
                 else
                 {
-                    instance = _assembly.CreateInstance(type.FullName);
-                    _formInstances[type.FullName] = instance;
+                    form = _assembly.CreateInstance(type.FullName) as Form;
+                    _formInstances[type.FullName] = form;
                 }
-                if (null != Application.OpenForms[instance.Name])
+                if (null != Application.OpenForms[form.Name])
                 {
-                    instance.BringToFront();
+                    form.BringToFront();
                 }
                 else
                 {
-                    instance = _assembly.CreateInstance(type.FullName);
-                    _formInstances[type.FullName] = instance;
-                    instance.Show();
+                    form = _assembly.CreateInstance(type.FullName) as Form;
+                    _formInstances[type.FullName] = form;
+                    form.Show();
                 }
             }
             catch (Exception ex)

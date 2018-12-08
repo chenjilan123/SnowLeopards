@@ -52,6 +52,12 @@
     <Compile Include="Blue.Designer.cs">
       <DependentUpon>Blue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Demo\ShortcutDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo\ShortcutDemo.Designer.cs">
+      <DependentUpon>ShortcutDemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Win.cs">
       <SubType>Form</SubType>
@@ -63,6 +69,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Blue.resx">
       <DependentUpon>Blue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo\ShortcutDemo.resx">
+      <DependentUpon>ShortcutDemo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Win.resx">
       <DependentUpon>Win.cs</DependentUpon>
@@ -87,8 +96,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Demo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
