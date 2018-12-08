@@ -21,6 +21,9 @@ namespace SnowLeopard
         public Main()
         {
             InitializeComponent();
+        }
+        private void Main_Load(object sender, EventArgs e)
+        {
             _assembly = Assembly.Load(AssemblyName);
             var types = _assembly.GetTypes();
             foreach (var item in types)
@@ -31,7 +34,10 @@ namespace SnowLeopard
                 }
                 SelectForm.Items.Add(item.Name);
             }
-            SelectForm.SelectedIndex = 0;
+            if (SelectForm.Items.Count > 0)
+            {
+                SelectForm.SelectedIndex = 0;
+            }
         }
 
         private void skinButton1_Click(object sender, EventArgs e)
@@ -71,5 +77,6 @@ namespace SnowLeopard
                 MessageBox.Show(ex.ToString());
             }
         }
+
     }
 }

@@ -46,44 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlueForm.cs">
+    <Compile Include="Blue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BlueForm.Designer.cs">
-      <DependentUpon>BlueForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Demo\MenuContext.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Demo\MenuContext.Designer.cs">
-      <DependentUpon>MenuContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Demo\RichTextBoxDemo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Demo\RichTextBoxDemo.Designer.cs">
-      <DependentUpon>RichTextBoxDemo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Demo\TextBoxDemo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Demo\TextBoxDemo.Designer.cs">
-      <DependentUpon>TextBoxDemo.cs</DependentUpon>
+    <Compile Include="Blue.Designer.cs">
+      <DependentUpon>Blue.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Win.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Win.Designer.cs">
+      <DependentUpon>Win.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BlueForm.resx">
-      <DependentUpon>BlueForm.cs</DependentUpon>
+    <EmbeddedResource Include="Blue.resx">
+      <DependentUpon>Blue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Demo\MenuContext.resx">
-      <DependentUpon>MenuContext.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Demo\RichTextBoxDemo.resx">
-      <DependentUpon>RichTextBoxDemo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Demo\TextBoxDemo.resx">
-      <DependentUpon>TextBoxDemo.cs</DependentUpon>
+    <EmbeddedResource Include="Win.resx">
+      <DependentUpon>Win.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +86,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Demo\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

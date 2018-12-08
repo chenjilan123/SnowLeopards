@@ -9,18 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SnowLeopard.Controls.Demo
+namespace SnowLeopard.Controls
 {
-    public partial class MenuContext : BlueForm
+    public partial class Blue : Skin_Color
     {
-        public MenuContext()
+        public Blue()
         {
             InitializeComponent();
         }
 
-        private void ShowContext_Click(object sender, EventArgs e)
+        private void axTV1_Enter(object sender, EventArgs e)
         {
-            cms.Show(this, PointToClient(MousePosition));
         }
     }
 }

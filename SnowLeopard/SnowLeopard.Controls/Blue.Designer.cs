@@ -1,6 +1,6 @@
 ﻿namespace SnowLeopard.Controls
 {
-    partial class BlueForm
+    partial class Blue
     {
         /// <summary>
         /// Required designer variable.
