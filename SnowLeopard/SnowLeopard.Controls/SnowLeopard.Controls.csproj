@@ -52,6 +52,12 @@
     <Compile Include="BlueForm.Designer.cs">
       <DependentUpon>BlueForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Demo\DateTimePick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo\DateTimePick.Designer.cs">
+      <DependentUpon>DateTimePick.cs</DependentUpon>
+    </Compile>
     <Compile Include="Demo\MenuContext.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BlueForm.resx">
       <DependentUpon>BlueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo\DateTimePick.resx">
+      <DependentUpon>DateTimePick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Demo\MenuContext.resx">
       <DependentUpon>MenuContext.cs</DependentUpon>
