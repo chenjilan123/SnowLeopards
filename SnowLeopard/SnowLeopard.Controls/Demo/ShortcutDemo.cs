@@ -13,6 +13,20 @@ namespace SnowLeopard.Controls.Demo
         public ShortcutDemo()
         {
             InitializeComponent();
+            this.pictureBox1.Image = Image.FromFile($@"{Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)}\JollyRoger.jpg");
+
+            //AccessibilityObject
+            button1.AccessibleDefaultActionDescription = "Say Hello";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hello World");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

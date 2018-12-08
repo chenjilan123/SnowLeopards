@@ -25,11 +25,17 @@ namespace SnowLeopard
         }
         private void Main_Load(object sender, EventArgs e)
         {
+            LoadDemo();
+        }
+
+        private void LoadDemo()
+        {
+            SelectForm.Items.Clear();
             _assembly = Assembly.Load(AssemblyName);
             var types = _assembly.GetTypes();
             foreach (var item in types)
             {
-                
+
                 if (item.Namespace != PrefixNamespace || !item.IsSubclassOf(typeof(Form)))
                 {
                     continue;
@@ -40,6 +46,7 @@ namespace SnowLeopard
             {
                 SelectForm.SelectedIndex = 0;
             }
+            _assembly = null;
         }
 
         private void skinButton1_Click(object sender, EventArgs e)
@@ -80,5 +87,9 @@ namespace SnowLeopard
             }
         }
 
+        private void skinButton2_Click(object sender, EventArgs e)
+        {
+            LoadDemo();
+        }
     }
 }
