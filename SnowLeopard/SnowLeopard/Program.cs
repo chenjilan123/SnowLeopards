@@ -34,9 +34,19 @@ namespace SnowLeopard
                 xEle.Add(xStu);
             }
 
+            var child = xEle.Element("Student");
+            if (child == null)
+            {
+                Console.WriteLine("Student isn't exists in xEle.");
+            }
+            else
+            {
+                child.SetValue("12321321321");
+                Console.WriteLine(child);
+            }
 
 
-            Console.WriteLine(xEle.ToString());
+            Console.WriteLine(xEle.ToString(SaveOptions.DisableFormatting));
 
         }
 
