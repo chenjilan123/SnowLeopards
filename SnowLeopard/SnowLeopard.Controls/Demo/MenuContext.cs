@@ -20,7 +20,8 @@ namespace SnowLeopard.Controls.Demo
 
         private void ShowContext_Click(object sender, EventArgs e)
         {
-            cms.Show(this, PointToClient(MousePosition));
+            //cms.Show(this, PointToClient(MousePosition));
+            cms.Show(sender as Control, PointToClient(MousePosition));
         }
     }
 }
