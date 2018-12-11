@@ -10,13 +10,26 @@ namespace SnowLeopard
     {
         static void Main()
         {
+            OverrideOrderDemo();
+        }
+        private static void OverrideOrderDemo()
+        {
+            var o = new OverrideOrder2();
+            o.Print();
+        }
+        private static void InfinityRoutine()
+        {
+            var ac = new InfinityProperty();
+            ac.Number1 = 5;
+        }
+        private static void Aggre()
+        {
             Console.WriteLine("Hehe");
-
             var lst = new List<string>
             {
                 "1","2","3","4"
             };
-            Console.WriteLine(lst.Aggregate<string>((sBegin, sCur) => 
+            Console.WriteLine(lst.Aggregate<string>((sBegin, sCur) =>
             {
                 return $"{sBegin},{sCur}";
             }));
