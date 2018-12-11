@@ -53,13 +53,15 @@ namespace SnowLeopard.Controls.Demo
             this.flashTrackBar1.BackColor = System.Drawing.Color.Black;
             this.flashTrackBar1.DarkenBy = ((byte)(200));
             this.flashTrackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flashTrackBar1.EndColor = System.Drawing.Color.Lime;
             this.flashTrackBar1.ForeColor = System.Drawing.Color.White;
             this.flashTrackBar1.Location = new System.Drawing.Point(0, 0);
             this.flashTrackBar1.Name = "flashTrackBar1";
+            this.flashTrackBar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.flashTrackBar1.Size = new System.Drawing.Size(600, 450);
             this.flashTrackBar1.TabIndex = 0;
             this.flashTrackBar1.Text = "Drag the Mouse and say Wow!";
-            this.flashTrackBar1.Value = 73;
+            this.flashTrackBar1.Value = 64;
             // 
             // HostApp
             // 
