@@ -13,6 +13,11 @@ namespace SnowLeopard
     {
         static void Main()
         {
+
+        }
+
+        private static void Output()
+        {
             List<Student> lst = new List<Student>()
             {
                 new Student("Mike", "13500"),
@@ -44,15 +49,7 @@ namespace SnowLeopard
                 child.SetValue("12321321321");
                 Console.WriteLine(child);
             }
-
-
             Console.WriteLine(xEle.ToString(SaveOptions.DisableFormatting));
-
-        }
-
-        private static void Output()
-        {
-            OverrideOrderDemo();
         }
         private static void OverrideOrderDemo()
         {
