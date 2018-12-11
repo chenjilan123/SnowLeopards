@@ -89,15 +89,5 @@
     <Content Include="Skin\CSkin更新文档.txt" />
     <Content Include="Skin\【必看】使用教程.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SnowLeopard.Components\SnowLeopard.Components.csproj">
-      <Project>{ac7b55e4-1455-45b7-b6f6-e91e34279c6e}</Project>
-      <Name>SnowLeopard.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SnowLeopard.Controls\SnowLeopard.Controls.csproj">
-      <Project>{8de4aa91-59ab-4f6e-87c4-780be658166f}</Project>
-      <Name>SnowLeopard.Controls</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

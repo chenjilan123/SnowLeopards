@@ -5,10 +5,6 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowLeopard", "SnowLeopard\SnowLeopard.csproj", "{F979410B-A9A6-465B-8169-D60FE0DC3A95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowLeopard.Controls", "SnowLeopard.Controls\SnowLeopard.Controls.csproj", "{8DE4AA91-59AB-4F6E-87C4-780BE658166F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnowLeopard.Components", "SnowLeopard.Components\SnowLeopard.Components.csproj", "{AC7B55E4-1455-45B7-B6F6-E91E34279C6E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{F979410B-A9A6-465B-8169-D60FE0DC3A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F979410B-A9A6-465B-8169-D60FE0DC3A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F979410B-A9A6-465B-8169-D60FE0DC3A95}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8DE4AA91-59AB-4F6E-87C4-780BE658166F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DE4AA91-59AB-4F6E-87C4-780BE658166F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DE4AA91-59AB-4F6E-87C4-780BE658166F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DE4AA91-59AB-4F6E-87C4-780BE658166F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC7B55E4-1455-45B7-B6F6-E91E34279C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC7B55E4-1455-45B7-B6F6-E91E34279C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC7B55E4-1455-45B7-B6F6-E91E34279C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC7B55E4-1455-45B7-B6F6-E91E34279C6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
