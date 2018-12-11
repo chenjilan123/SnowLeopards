@@ -20,7 +20,8 @@ namespace SnowLeopard
             //Application.Run(new Form1());
             //Application.Run(new StartupShotdown());
             //Application.Run(new BorderTimer());
-            Application.Run(new Align());
+            //Application.Run(new Align());
+            Application.Run(new Layout());
         }
     }
 }

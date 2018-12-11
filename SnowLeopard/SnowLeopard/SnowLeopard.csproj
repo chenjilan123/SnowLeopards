@@ -38,6 +38,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +76,12 @@
     <Compile Include="WFs\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="WFs\Layout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFs\Layout.Designer.cs">
+      <DependentUpon>Layout.cs</DependentUpon>
+    </Compile>
     <Compile Include="WFs\ScaleProperty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WFs\FontTheme.resx">
       <DependentUpon>FontTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFs\Layout.resx">
+      <DependentUpon>Layout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WFs\StartupShotdown.resx">
       <DependentUpon>StartupShotdown.cs</DependentUpon>

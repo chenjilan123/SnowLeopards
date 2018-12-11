@@ -46,7 +46,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(93, 12);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(96, 23);
             this.button2.TabIndex = 0;
             this.button2.Text = "Message";
             this.button2.UseVisualStyleBackColor = true;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 224);
+            this.ClientSize = new System.Drawing.Size(635, 383);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "StartupShotdown";
