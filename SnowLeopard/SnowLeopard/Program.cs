@@ -23,9 +23,6 @@ namespace SnowLeopard
             //Application.Run(new BorderTimer());
             //Application.Run(new Align());
             Application.Run(new Layout());
-=======
-            Application.Run(new BorderTimer());
->>>>>>> parent of bb4c8d9... 1
         }
     }
 }
