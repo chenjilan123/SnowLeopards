@@ -55,6 +55,10 @@ namespace SnowLeopard
                     instance = _assembly.CreateInstance(type.FullName);
                     _formInstances[type.FullName] = instance;
                 }
+                if (instance.Name == "MenuContext")
+                {
+                    instance.Name = "frmMenuContext";
+                }
                 if (null != Application.OpenForms[instance.Name])
                 {
                     instance.BringToFront();
