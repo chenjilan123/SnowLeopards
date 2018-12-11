@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Data.SqlClient;
 
 namespace SnowLeopard
 {
@@ -17,6 +18,20 @@ namespace SnowLeopard
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var dtPlan = DalProxy.Sql.GetDataTableBySP("spTimer_GetCheckPlan", new SqlParameter[0]);
+
+                Number.Text = dtPlan.Rows.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
