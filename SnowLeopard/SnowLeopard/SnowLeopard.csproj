@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="InfinityProperty.cs" />
     <Compile Include="OverrideOrder.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
