@@ -57,7 +57,7 @@
     <AssemblyOriginatorKeyFile>cgopublic.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <DelaySign>true</DelaySign>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL" />
