@@ -36,10 +36,5 @@ namespace SnowLeopard.WFs
         {
 
         }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-
-        }
     }
 }
