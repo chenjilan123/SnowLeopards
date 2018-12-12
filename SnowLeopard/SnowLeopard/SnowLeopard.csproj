@@ -52,12 +52,6 @@
     <Compile Include="Event\Publisher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WFs\Align.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WFs\Align.Designer.cs">
-      <DependentUpon>Align.cs</DependentUpon>
-    </Compile>
     <Compile Include="WFs\BorderTimer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +91,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WFs\Align.resx">
-      <DependentUpon>Align.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="WFs\BorderTimer.resx">
       <DependentUpon>BorderTimer.cs</DependentUpon>
     </EmbeddedResource>
