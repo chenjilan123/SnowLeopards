@@ -52,6 +52,12 @@
     <Compile Include="BlueForm.Designer.cs">
       <DependentUpon>BlueForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DemoControl\KeyCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DemoControl\KeyCtrl.Designer.cs">
+      <DependentUpon>KeyCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Demo\ControlEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BlueForm.resx">
       <DependentUpon>BlueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoControl\KeyCtrl.resx">
+      <DependentUpon>KeyCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Demo\ControlEvent.resx">
       <DependentUpon>ControlEvent.cs</DependentUpon>
