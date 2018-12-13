@@ -70,6 +70,9 @@
     <Compile Include="Demo\DateTimePick.Designer.cs">
       <DependentUpon>DateTimePick.cs</DependentUpon>
     </Compile>
+    <Compile Include="Demo\DemoForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Demo\MenuContext.cs">
       <SubType>Form</SubType>
     </Compile>
