@@ -5,7 +5,7 @@ namespace SnowLeopard.Controls.Demo
     using System.Drawing;
     using System.Windows.Forms;
     [System.Security.Permissions.PermissionSet(System.Security.Permissions.SecurityAction.Demand, Name = "FullTrust")]
-    class DemoForm1 : Form
+    class KeyForm1 : Form
     {
         // The following Windows message value is defined in Winuser.h.
         private int WM_KEYDOWN = 0x100;
@@ -15,10 +15,10 @@ namespace SnowLeopard.Controls.Demo
         public static void Main()
         {
             Application.EnableVisualStyles();
-            Application.Run(new DemoForm1());
+            Application.Run(new KeyForm1());
         }
 
-        public DemoForm1()
+        public KeyForm1()
         {
             this.AutoSize = true;
             this.Controls.Add(CustomTextBox1);

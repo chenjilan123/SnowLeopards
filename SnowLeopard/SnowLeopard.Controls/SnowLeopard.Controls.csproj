@@ -58,6 +58,12 @@
     <Compile Include="DemoControl\KeyCtrl.Designer.cs">
       <DependentUpon>KeyCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Demo\ClickDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo\ClickDemo.Designer.cs">
+      <DependentUpon>ClickDemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Demo\ControlEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,7 +76,13 @@
     <Compile Include="Demo\DateTimePick.Designer.cs">
       <DependentUpon>DateTimePick.cs</DependentUpon>
     </Compile>
-    <Compile Include="Demo\DemoForm1.cs">
+    <Compile Include="Demo\DistinguishSingleDoubleClick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo\KeyForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo\KeyForm1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Demo\MenuContext.cs">
@@ -84,6 +96,9 @@
     </Compile>
     <Compile Include="Demo\RichTextBoxDemo.Designer.cs">
       <DependentUpon>RichTextBoxDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\SystemInfoBrowserForm.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Demo\TextBoxDemo.cs">
       <SubType>Form</SubType>
@@ -99,6 +114,9 @@
     <Compile Include="Demo\HostApp.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PreciseClickButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInput.cs">
       <SubType>UserControl</SubType>
@@ -113,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DemoControl\KeyCtrl.resx">
       <DependentUpon>KeyCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo\ClickDemo.resx">
+      <DependentUpon>ClickDemo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Demo\ControlEvent.resx">
       <DependentUpon>ControlEvent.cs</DependentUpon>
