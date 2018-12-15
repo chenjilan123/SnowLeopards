@@ -9,70 +9,108 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using CCWin.SkinControl;
 
 namespace SnowLeopard
 {
     public partial class Main : Skin_Color
     {
-        private const string AssemblyName = "SnowLeopard.Controls";
-        private const string PrefixNamespace = "SnowLeopard.Controls.Demo";
+        private const string TargetAssemblyName = "SnowLeopard.Controls";
+        string[] arrNamespace = new String[]
+        {
+                "SnowLeopard.Controls.Demo",
+                "SnowLeopard.Controls.DemoI",
+        };
+        SkinComboBox[] arrCombo = null;
         private Assembly _assembly = null;
         private Dictionary<string, dynamic> _formInstances = new Dictionary<string, dynamic>();
         public Main()
         {
             InitializeComponent();
-            _assembly = Assembly.Load(AssemblyName);
+            //this.ShowInTaskbar = false; //这样缩小化后会找不到。
+            arrCombo = new SkinComboBox[]
+            {
+                combo1,
+                combo2,
+            };
+            for (int i = 0; i < arrNamespace.Length; i++)
+            {
+                LoadControls(arrNamespace[i], arrCombo[i]);
+            }
+        }
+
+        private void LoadControls(string sNamespace, SkinComboBox combo)
+        {
+            if (_assembly == null)
+            {
+                _assembly = Assembly.Load(TargetAssemblyName);
+            }
             var types = _assembly.GetTypes();
             foreach (var item in types)
             {
-                if (item.Namespace != PrefixNamespace)
+                if (item.Namespace != sNamespace)
                 {
                     continue;
                 }
-                SelectForm.Items.Add(item.Name);
+                combo.Items.Add(item.Name);
             }
-            SelectForm.SelectedIndex = 0;
+            combo.SelectedIndex = 0;
         }
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
             try
             {
-                var typeName = $"{PrefixNamespace}.{SelectForm.SelectedItem.ToString()}";
-                var type = _assembly.GetType(typeName);
-                if (type == null)
-                {
-                    MessageBox.Show("Current selected item is invalid.");
-                    return;
-                }
-                dynamic instance;
-                if (_formInstances.ContainsKey(type.FullName))
-                {
-                    instance = _formInstances[type.FullName];
-                }
-                else
-                {
-                    instance = _assembly.CreateInstance(type.FullName);
-                    _formInstances[type.FullName] = instance;
-                }
-                if (instance.Name == "MenuContext")
-                {
-                    instance.Name = "frmMenuContext";
-                }
-                if (null != Application.OpenForms[instance.Name])
-                {
-                    instance.BringToFront();
-                }
-                else
-                {
-                    instance = _assembly.CreateInstance(type.FullName);
-                    _formInstances[type.FullName] = instance;
-                    instance.Show();
-                }
+                Button button = sender as Button;
+                var number = button.Name.Substring(button.Name.Length - 1);
+                int index = int.Parse(number.ToString()) - 1;
+                CreateForm(arrNamespace[index], arrCombo[index]);
+
+                this.WindowState = FormWindowState.Minimized;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void CreateForm(string prefixNamespace, SkinComboBox combo)
+        {
+            var typeName = $"{prefixNamespace}.{combo.SelectedItem.ToString()}";
+            var type = _assembly.GetType(typeName);
+            if (type == null)
+            {
+                MessageBox.Show("Current selected item is invalid.");
+                return;
+            }
+            dynamic instance;
+            bool bIsCreated = false;
+            if (_formInstances.ContainsKey(type.FullName))
+            {
+                instance = _formInstances[type.FullName];
+            }
+            else
+            {
+                bIsCreated = true;
+                instance = _assembly.CreateInstance(type.FullName);
+                _formInstances[type.FullName] = instance;
+            }
+            if (instance.Name == "MenuContext")
+            {
+                instance.Name = "frmMenuContext";
+            }
+            if (null != Application.OpenForms[instance.Name])
+            {
+                instance.BringToFront();
+            }
+            else
+            {
+                if (!bIsCreated)
+                {
+                    instance = _assembly.CreateInstance(type.FullName);
+                    _formInstances[type.FullName] = instance;
+                }
+                instance.Show();
             }
         }
     }

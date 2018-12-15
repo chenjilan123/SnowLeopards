@@ -52,11 +52,20 @@
     <Compile Include="BlueForm.Designer.cs">
       <DependentUpon>BlueForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DemoI\DragBestPractice.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DemoControl\KeyCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="DemoControl\KeyCtrl.Designer.cs">
       <DependentUpon>KeyCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemoI\DragDrop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoI\DragDrop.Designer.cs">
+      <DependentUpon>DragDrop.cs</DependentUpon>
     </Compile>
     <Compile Include="Demo\ClickDemo.cs">
       <SubType>Form</SubType>
@@ -106,6 +115,9 @@
     <Compile Include="Demo\TextBoxDemo.Designer.cs">
       <DependentUpon>TextBoxDemo.cs</DependentUpon>
     </Compile>
+    <Compile Include="DragButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FlashTrackBar\FlashTrackBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -131,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DemoControl\KeyCtrl.resx">
       <DependentUpon>KeyCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoI\DragDrop.resx">
+      <DependentUpon>DragDrop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Demo\ClickDemo.resx">
       <DependentUpon>ClickDemo.cs</DependentUpon>
