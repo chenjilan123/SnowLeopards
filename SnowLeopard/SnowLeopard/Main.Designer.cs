@@ -31,13 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.text = new CCWin.SkinControl.SkinTextBox();
             this.Run = new CCWin.SkinControl.SkinButton();
-            this.text.SuspendLayout();
             this.SuspendLayout();
             // 
             // text
             // 
             this.text.BackColor = System.Drawing.Color.Transparent;
-            this.text.Controls.Add(this.Run);
             this.text.Dock = System.Windows.Forms.DockStyle.Fill;
             this.text.DownBack = null;
             this.text.Icon = null;
@@ -57,8 +55,8 @@
             this.text.NormlBack = null;
             this.text.Padding = new System.Windows.Forms.Padding(5);
             this.text.ReadOnly = false;
-            this.text.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.text.Size = new System.Drawing.Size(366, 215);
+            this.text.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.text.Size = new System.Drawing.Size(675, 447);
             // 
             // 
             // 
@@ -68,7 +66,8 @@
             this.text.SkinTxt.Location = new System.Drawing.Point(5, 5);
             this.text.SkinTxt.Multiline = true;
             this.text.SkinTxt.Name = "BaseText";
-            this.text.SkinTxt.Size = new System.Drawing.Size(356, 205);
+            this.text.SkinTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.text.SkinTxt.Size = new System.Drawing.Size(665, 437);
             this.text.SkinTxt.TabIndex = 0;
             this.text.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.text.SkinTxt.WaterText = "";
@@ -80,10 +79,11 @@
             // 
             // Run
             // 
+            this.Run.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Run.BackColor = System.Drawing.Color.Transparent;
             this.Run.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.Run.DownBack = null;
-            this.Run.Location = new System.Drawing.Point(283, 184);
+            this.Run.Location = new System.Drawing.Point(595, 457);
             this.Run.MouseBack = null;
             this.Run.Name = "Run";
             this.Run.NormlBack = null;
@@ -98,13 +98,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(374, 258);
+            this.ClientSize = new System.Drawing.Size(683, 490);
+            this.Controls.Add(this.Run);
             this.Controls.Add(this.text);
             this.Name = "Main";
             this.Padding = new System.Windows.Forms.Padding(0);
             this.Text = "Main";
-            this.text.ResumeLayout(false);
-            this.text.PerformLayout();
             this.ResumeLayout(false);
 
         }
