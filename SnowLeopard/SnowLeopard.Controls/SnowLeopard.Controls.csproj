@@ -144,6 +144,9 @@
     <EmbeddedResource Include="DemoControl\KeyCtrl.resx">
       <DependentUpon>KeyCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DemoI\DragBestPractice.resx">
+      <DependentUpon>DragBestPractice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DemoI\DragDrop.resx">
       <DependentUpon>DragDrop.cs</DependentUpon>
     </EmbeddedResource>

@@ -38,48 +38,72 @@ namespace SnowLeopard.Controls.DemoI
             this.ListDragTarget = new System.Windows.Forms.ListBox();
             this.UseCustomCursorsCheck = new System.Windows.Forms.CheckBox();
             this.DropLocationLabel = new System.Windows.Forms.Label();
-
             this.SuspendLayout();
-
+            // 
             // ListDragSource
-            this.ListDragSource.Items.AddRange(new object[] {"one", "two", "three", "four",
-                                                                "five", "six", "seven", "eight",
-                                                                "nine", "ten"});
+            // 
+            this.ListDragSource.ItemHeight = 12;
+            this.ListDragSource.Items.AddRange(new object[] {
+            "one",
+            "two",
+            "three",
+            "four",
+            "five",
+            "six",
+            "seven",
+            "eight",
+            "nine",
+            "ten"});
             this.ListDragSource.Location = new System.Drawing.Point(10, 17);
-            this.ListDragSource.Size = new System.Drawing.Size(120, 225);
-            this.ListDragSource.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListDragSource_MouseDown);
-            this.ListDragSource.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.ListDragSource_QueryContinueDrag);
-            this.ListDragSource.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListDragSource_MouseUp);
-            this.ListDragSource.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListDragSource_MouseMove);
+            this.ListDragSource.Name = "ListDragSource";
+            this.ListDragSource.Size = new System.Drawing.Size(120, 220);
+            this.ListDragSource.TabIndex = 0;
             this.ListDragSource.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.ListDragSource_GiveFeedback);
-
+            this.ListDragSource.QueryContinueDrag += new System.Windows.Forms.QueryContinueDragEventHandler(this.ListDragSource_QueryContinueDrag);
+            this.ListDragSource.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListDragSource_MouseDown);
+            this.ListDragSource.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ListDragSource_MouseMove);
+            this.ListDragSource.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListDragSource_MouseUp);
+            // 
             // ListDragTarget
+            // 
             this.ListDragTarget.AllowDrop = true;
+            this.ListDragTarget.ItemHeight = 12;
             this.ListDragTarget.Location = new System.Drawing.Point(154, 17);
-            this.ListDragTarget.Size = new System.Drawing.Size(120, 225);
-            this.ListDragTarget.DragOver += new System.Windows.Forms.DragEventHandler(this.ListDragTarget_DragOver);
+            this.ListDragTarget.Name = "ListDragTarget";
+            this.ListDragTarget.Size = new System.Drawing.Size(120, 220);
+            this.ListDragTarget.TabIndex = 1;
             this.ListDragTarget.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListDragTarget_DragDrop);
             this.ListDragTarget.DragEnter += new System.Windows.Forms.DragEventHandler(this.ListDragTarget_DragEnter);
+            this.ListDragTarget.DragOver += new System.Windows.Forms.DragEventHandler(this.ListDragTarget_DragOver);
             this.ListDragTarget.DragLeave += new System.EventHandler(this.ListDragTarget_DragLeave);
-
+            // 
             // UseCustomCursorsCheck
+            // 
             this.UseCustomCursorsCheck.Location = new System.Drawing.Point(10, 243);
+            this.UseCustomCursorsCheck.Name = "UseCustomCursorsCheck";
             this.UseCustomCursorsCheck.Size = new System.Drawing.Size(137, 24);
+            this.UseCustomCursorsCheck.TabIndex = 2;
             this.UseCustomCursorsCheck.Text = "Use Custom Cursors";
-
+            // 
             // DropLocationLabel
+            // 
             this.DropLocationLabel.Location = new System.Drawing.Point(154, 245);
+            this.DropLocationLabel.Name = "DropLocationLabel";
             this.DropLocationLabel.Size = new System.Drawing.Size(137, 24);
+            this.DropLocationLabel.TabIndex = 3;
             this.DropLocationLabel.Text = "None";
-
-            // Form1
+            // 
+            // DragBestPractice
+            // 
             this.ClientSize = new System.Drawing.Size(292, 270);
-            this.Controls.AddRange(new System.Windows.Forms.Control[] {this.ListDragSource,
-                                                        this.ListDragTarget, this.UseCustomCursorsCheck,
-                                                        this.DropLocationLabel});
+            this.Controls.Add(this.ListDragSource);
+            this.Controls.Add(this.ListDragTarget);
+            this.Controls.Add(this.UseCustomCursorsCheck);
+            this.Controls.Add(this.DropLocationLabel);
+            this.Name = "DragBestPractice";
             this.Text = "drag-and-drop Example";
-
             this.ResumeLayout(false);
+
         }
 
         private void ListDragSource_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -187,7 +211,6 @@ namespace SnowLeopard.Controls.DemoI
         }
         private void ListDragTarget_DragOver(object sender, System.Windows.Forms.DragEventArgs e)
         {
-
             // Determine whether string data exists in the drop data. If not, then
             // the drop effect reflects that the drop cannot occur.
             if (!e.Data.GetDataPresent(typeof(System.String)))

@@ -9,7 +9,6 @@ namespace SnowLeopard.Controls.DemoI
 {
     public partial class DragDrop : BlueForm
     {
-        private DragButton btn;
         private System.ComponentModel.IContainer components;
         private CCWin.SkinControl.SkinChatRichTextBox textbox;
 
@@ -19,6 +18,12 @@ namespace SnowLeopard.Controls.DemoI
             this.DragEnter += (s, e) => AppendText("DragEnter");
             this.DragOver += (s, e) => AppendText("DragOver");
             this.DragLeave += (s, e) => AppendText("DragLeave");
+
+            textbox.QueryContinueDrag += (s, e1) => AppendText("Button QueryContinueDrag");
+            textbox.DragEnter += (s, e1) => AppendText("Button DragEnter");
+            textbox.DragOver += (s, e1) => AppendText("Button DragOver");
+            textbox.DragLeave += (s, e1) => AppendText("Button DragLeave");
+            textbox.AllowDrop = true;
         }
 
         private void AppendText(string msg)
@@ -28,10 +33,10 @@ namespace SnowLeopard.Controls.DemoI
 
         private void dragButton1_Click(object sender, EventArgs e)
         {
-            btn.QueryContinueDrag += (s, e1) => AppendText("Button QueryContinueDrag");
-            btn.DragEnter += (s, e1) => AppendText("Button DragEnter");
-            btn.DragOver += (s, e1) => AppendText("Button DragOver");
-            btn.DragLeave += (s, e1) => AppendText("Button DragLeave");
+            //btn.QueryContinueDrag += (s, e1) => AppendText("Button QueryContinueDrag");
+            //btn.DragEnter += (s, e1) => AppendText("Button DragEnter");
+            //btn.DragOver += (s, e1) => AppendText("Button DragOver");
+            //btn.DragLeave += (s, e1) => AppendText("Button DragLeave");
 
             DragEventArgs e2;
             //e2.AllowedEffect = DragDropEffects.All | DragDropEffects.Copy | DragDropEffects.Scroll;
