@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -13,7 +14,45 @@ namespace SnowLeopard
     {
         static void Main()
         {
+            SplitString();
+        }
 
+
+        private static void SplitString()
+        {
+            var s = "1_1, 1_1_2, 1_2, 1_2_2, 1_4, 1_4_2, 1_8, 1_8_2, 1_16, 1_16_2, 1_32, 1_32_2, 2_2147483648, 2_2147483648_2, 2_4294967296, 2_4294967296_2, 2_8589934592, 2_8589934592_2, 2_17179869184, 2_17179869184_2, 2_34359738368, 2_34359738368_2, 2_68719476736, 2_68719476736_2";
+            var arr = s.Split(',');
+
+            foreach (var item in arr)
+            {
+                var arrAlarmFlag = item.Split('_');
+                Console.WriteLine(arrAlarmFlag[0]);
+                Console.WriteLine(arrAlarmFlag[1]);
+                if (arrAlarmFlag.Length == 2)
+                {
+                    Console.WriteLine(1);
+                }
+                else
+                {
+                    Console.WriteLine(arrAlarmFlag[2]);
+                }
+            }
+        }
+        private static void StringStartWithNumber()
+        {
+            while (true)
+            {
+                Console.WriteLine("Please input a string: ");
+                var sInput = Console.ReadLine();
+                if (Regex.IsMatch(sInput, @"^[\d][_]"))
+                {
+                    Console.WriteLine("True");
+                }
+                else
+                {
+                    Console.WriteLine("False");
+                }
+            }
         }
 
         private static void Output()
