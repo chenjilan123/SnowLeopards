@@ -14,7 +14,15 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            StructCompare();
+            CustomStructDefaultValue();
+
+        }
+
+        private static Triangle t;
+        private static void CustomStructDefaultValue()
+        {
+            Console.WriteLine(t.Length);
+            Console.WriteLine(t.Width);
         }
 
         private static void StructCompare()
