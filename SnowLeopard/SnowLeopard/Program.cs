@@ -14,9 +14,17 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            SplitString();
+            StructCompare();
         }
 
+        private static void StructCompare()
+        {
+            var t1 = new Triangle() { Length = 1, Width = 2 };
+            var t2 = new Triangle() { Length = 1, Width = 2 };
+
+            Console.WriteLine(t1 == t2);
+            Console.WriteLine(t1 != t2);
+        }
 
         private static void SplitString()
         {
