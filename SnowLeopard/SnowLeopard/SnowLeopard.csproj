@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InfinityProperty.cs" />
+    <Compile Include="Model\LonLatCalculate.cs" />
     <Compile Include="Model\Triangle.cs" />
     <Compile Include="OverrideOrder.cs" />
     <Compile Include="Model\Student.cs" />
