@@ -17,6 +17,7 @@ namespace SnowLeopard
         static void Main()
         {
             ClassMemory();
+            Console.ReadLine();
         }
 
 
@@ -30,16 +31,16 @@ namespace SnowLeopard
             //LightWeightNodeMemory(1000000);//97MB
             //LightWeightNodeMemory(2000000); //193MB   1:1
 
-            //MemoryTest<Redundancy>(1000000);//480MB
-            //MemoryTest<Redundancy>(2000000);//955MB
-            //MemoryTest<Vehicle>(1000000);   //814MB
-            //MemoryTest<Vehicle>(2000000);   //1614MB
-            //MemoryTest<Vehicle>(30000);     //28.192MB
-            //MemoryTest<Vehicle>(20000);     //20.984MB
-            //MemoryTest<Vehicle>(10000);       //13.364MB    ==>1：8
-            //MemoryTest<TreeNode>(1000000);  //96.176MB
-            //MemoryTest<TreeNode>(2000000);  //200.072MB
-            //MemoryTest<TreeNode>(10000);  //6.396MB ==>1:1
+            MemoryTest<Redundancy>(1000000);//480MB
+            MemoryTest<Redundancy>(2000000);//955MB
+            MemoryTest<Vehicle>(1000000);   //814MB
+            MemoryTest<Vehicle>(2000000);   //1614MB
+            MemoryTest<Vehicle>(30000);     //28.192MB
+            MemoryTest<Vehicle>(20000);     //20.984MB
+            MemoryTest<Vehicle>(10000);       //13.364MB    ==>1：8
+            MemoryTest<TreeNode>(1000000);  //96.176MB
+            MemoryTest<TreeNode>(2000000);  //200.072MB
+            MemoryTest<TreeNode>(10000);  //6.396MB ==>1:1
         }
         private static void MemoryTest<T>(int count)
         {
