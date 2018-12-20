@@ -1,7 +1,9 @@
 ﻿using SnowLeopard.Model;
+using SnowLeopard.Model.Memory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,9 +16,78 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            CustomStructDefaultValue();
-
+            ClassMemory();
         }
+
+
+        #region Memory
+        private static void ClassMemory()
+        {
+            //RedundancyMemory(1000000); //475MB-500MB
+            //RedundancyMemory(2000000); //948MB 1:5
+            //LightWeightMemory(1000000); //40MB
+            //LightWeightMemory(2000000); //73MB 1:0.4
+            //LightWeightNodeMemory(1000000);//97MB
+            //LightWeightNodeMemory(2000000); //193MB   1:1
+
+            //MemoryTest<Redundancy>(1000000);//480MB
+            //MemoryTest<Redundancy>(2000000);//955MB
+            //MemoryTest<Vehicle>(1000000);   //814MB
+            //MemoryTest<Vehicle>(2000000);   //1614MB
+            //MemoryTest<Vehicle>(30000);     //28.192MB
+            //MemoryTest<Vehicle>(20000);     //20.984MB
+            //MemoryTest<Vehicle>(10000);       //13.364MB    ==>1：8
+            //MemoryTest<TreeNode>(1000000);  //96.176MB
+            //MemoryTest<TreeNode>(2000000);  //200.072MB
+            //MemoryTest<TreeNode>(10000);  //6.396MB ==>1:1
+        }
+        private static void MemoryTest<T>(int count)
+        {
+            var monitor = new MemoryMonitor<T>();
+            monitor.Test(count);
+        }
+        private static void RedundancyMemory(int count)
+        {
+            List<Redundancy> _lst = new List<Redundancy>();
+            for (int i = 0; i < count; i++)
+            {
+                _lst.Add(new Redundancy());
+            }
+            Console.ReadLine();
+        }
+        private static void LightWeightMemory(int count)
+        {
+            List<LightWeight> _lst = new List<LightWeight>();
+            for (int i = 0; i < count; i++)
+            {
+                _lst.Add(new LightWeight());
+            }
+            Console.ReadLine();
+        }
+        private static void LightWeightNodeMemory(int count)
+        {
+            List<LightWeightNode> _lst = new List<LightWeightNode>();
+            for (int i = 0; i < count; i++)
+            {
+                _lst.Add(new LightWeightNode());
+            }
+            Console.ReadLine();
+        }
+        //[DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize")]
+        //public static extern int SetProcessWorkingSetSize(IntPtr process, int minSize, int maxSize);
+        /// <summary>
+        /// 释放内存
+        /// </summary>
+        //public static void ClearMemory()
+        //{
+        //    GC.Collect();
+        //    GC.WaitForPendingFinalizers();
+        //    if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+        //    {
+        //        App.SetProcessWorkingSetSize(System.Diagnostics.Process.GetCurrentProcess().Handle, -1, -1);
+        //    }
+        //}
+        #endregion
 
         private static Triangle t;
         private static void CustomStructDefaultValue()

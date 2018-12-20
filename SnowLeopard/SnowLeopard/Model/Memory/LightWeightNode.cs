@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace SnowLeopard.Model
+namespace SnowLeopard.Model.Memory
 {
-    public class Redundancy
+    public class LightWeightNode : TreeNode
     {
 
     }
