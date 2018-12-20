@@ -14,6 +14,7 @@ namespace SnowLeopard.Model.Memory
     {
         public void Test(int count)
         {
+            GC.Collect();
             var type = typeof(T);
             var assembly = Assembly.GetAssembly(type);
 
@@ -28,7 +29,7 @@ namespace SnowLeopard.Model.Memory
                 $"Count      : {count}\r\n" +
                 $"WorkingSet : {diag.WorkingSet / 1024 / 1024}MB");
 
-            List<MemoryInfo> lstMemory;
+            List<MemoryInfo> lstMemory=null;
             if (File.Exists("memoryinfo.json"))
             {
                 try
@@ -36,12 +37,9 @@ namespace SnowLeopard.Model.Memory
                     var sJson = File.ReadAllText("memoryinfo.json");
                     lstMemory = JsonSerializer.Deserialize<List<MemoryInfo>>(sJson);
                 }
-                catch 
-                {
-                    lstMemory = new List<MemoryInfo>();
-                }
+                catch  { }
             }
-            else
+            if (lstMemory == null)
             {
                 lstMemory = new List<MemoryInfo>();
             }
@@ -49,7 +47,7 @@ namespace SnowLeopard.Model.Memory
             {
                 TypeName = type.FullName,
                 Count = count,
-                WorkingSet = diag.WorkingSet,
+                WorkingSet = (double)diag.WorkingSet / 1024D / 1024D,
             };
             lstMemory.Add(memInfo);
 

@@ -9,7 +9,7 @@ namespace SnowLeopard.Model.Memory
     public class MemoryInfo
     {
         public int Count { get; set; }
-        public long WorkingSet { get; set; }
+        public double WorkingSet { get; set; }
         public string TypeName { get; set; }
     }
 }
