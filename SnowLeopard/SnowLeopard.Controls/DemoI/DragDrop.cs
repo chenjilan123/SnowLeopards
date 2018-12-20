@@ -9,7 +9,7 @@ namespace SnowLeopard.Controls.DemoI
 {
     public partial class DragDrop : BlueForm
     {
-        private System.ComponentModel.IContainer components;
+        //private System.ComponentModel.IContainer components;
         private CCWin.SkinControl.SkinChatRichTextBox textbox;
 
         public DragDrop()
@@ -38,13 +38,13 @@ namespace SnowLeopard.Controls.DemoI
             //btn.DragOver += (s, e1) => AppendText("Button DragOver");
             //btn.DragLeave += (s, e1) => AppendText("Button DragLeave");
 
-            DragEventArgs e2;
+            //DragEventArgs e2;
             //e2.AllowedEffect = DragDropEffects.All | DragDropEffects.Copy | DragDropEffects.Scroll;
             //e2.Data;
             //e2.Effect
             //e2.KeyState
             //DragAction.Cancel | DragAction.Continue | DragAction.Drop;
-            ListBox b;
+            //ListBox b;
             //b.FindForm();
         }
 
