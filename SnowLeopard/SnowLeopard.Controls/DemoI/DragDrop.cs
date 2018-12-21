@@ -24,6 +24,7 @@ namespace SnowLeopard.Controls.DemoI
             textbox.DragOver += (s, e1) => AppendText("Button DragOver");
             textbox.DragLeave += (s, e1) => AppendText("Button DragLeave");
             textbox.AllowDrop = true;
+            
         }
 
         private void AppendText(string msg)
