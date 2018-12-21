@@ -1,6 +1,6 @@
-﻿namespace SnowLeopard.Controls
+﻿namespace SnowLeopard.Controls.DemoI
 {
-    partial class BlueForm
+    partial class FadeAnimate
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // BlueForm
+            // FadeAnimate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 281);
-            this.Name = "BlueForm";
-            this.ShowDrawIcon = false;
-            this.ShowIcon = false;
-            this.Text = "";
+            this.ClientSize = new System.Drawing.Size(410, 294);
+            this.Name = "FadeAnimate";
             this.ResumeLayout(false);
 
         }

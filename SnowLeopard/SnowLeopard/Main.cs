@@ -66,7 +66,10 @@ namespace SnowLeopard
                 int index = int.Parse(number.ToString()) - 1;
                 CreateForm(arrNamespace[index], arrCombo[index]);
 
-                this.WindowState = FormWindowState.Minimized;
+                if(isMinimization.Checked)
+                {
+                    this.WindowState = FormWindowState.Minimized;
+                }
             }
             catch (Exception ex)
             {
