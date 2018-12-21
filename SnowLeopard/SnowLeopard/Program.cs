@@ -16,7 +16,8 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            ClassMemory();
+            
+
             Console.ReadLine();
         }
 
