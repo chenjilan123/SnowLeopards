@@ -13,13 +13,15 @@ namespace SnowLeopard.Controls.DemoI
 {
     public partial class FadeAnimate : BlueForm
     {
-        private const int SW_TIME = 5000;
-        private const int CL_TIME = 5000;
+        private const int SW_TIME = 2000;
+        private const int CL_TIME = 2000;
         private bool _UseSlideAnimation;
         public FadeAnimate()
         {
             InitializeComponent();
             _UseSlideAnimation = true;
+            this.TopMost = false;
+
             //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FadeAnimate_FormClosing);
             //this.Load += new System.EventHandler(this.FadeAnimate_Load);
         }
@@ -52,17 +54,46 @@ namespace SnowLeopard.Controls.DemoI
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            AnimateWindow(this.Handle, SW_TIME, AW_ACTIVATE | (_UseSlideAnimation ?
-                          AW_HOR_POSITIVE | AW_SLIDE : AW_BLEND));
+            //AnimateWindow(this.Handle, SW_TIME, AW_ACTIVATE | (_UseSlideAnimation ?
+            //              AW_HOR_POSITIVE | AW_SLIDE : AW_BLEND));
         }
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
-            if (e.Cancel == false)
+            //if (e.Cancel == false)
+            //{
+            //    AnimateWindow(this.Handle, CL_TIME, AW_HIDE | (_UseSlideAnimation ?
+            //                  AW_HOR_NEGATIVE | AW_SLIDE : AW_BLEND));
+            //}
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            //base.OnActivated(e);
+        }
+        protected override bool ShowWithoutActivation
+        {
+            get
             {
-                AnimateWindow(this.Handle, CL_TIME, AW_HIDE | (_UseSlideAnimation ?
-                              AW_HOR_NEGATIVE | AW_SLIDE : AW_BLEND));
+                return true;
+
             }
         }
+
+        #region 没用1
+        //声明常量：(释义可参见windows API)
+        const int WS_EX_NOACTIVATE = 0x08000000;
+        //重载Form的CreateParams属性，添加不获取焦点属性值。
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= WS_EX_NOACTIVATE;
+                return cp;
+            }
+        }
+        #endregion
+
     }
 }

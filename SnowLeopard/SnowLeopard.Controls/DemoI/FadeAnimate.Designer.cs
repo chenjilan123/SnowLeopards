@@ -28,18 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(11, 42);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 0;
             // 
             // FadeAnimate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 294);
+            this.ClientSize = new System.Drawing.Size(140, 76);
+            this.Controls.Add(this.textBox1);
             this.Name = "FadeAnimate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

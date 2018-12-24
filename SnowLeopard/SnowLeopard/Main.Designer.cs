@@ -114,7 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CanResize = false;
-            this.ClientSize = new System.Drawing.Size(234, 135);
+            this.ClientSize = new System.Drawing.Size(231, 132);
             this.Controls.Add(this.isMinimization);
             this.Controls.Add(this.combo2);
             this.Controls.Add(this.combo1);
