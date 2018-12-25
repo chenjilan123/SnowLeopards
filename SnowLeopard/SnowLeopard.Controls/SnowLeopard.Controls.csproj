@@ -50,6 +50,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animate\Animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animate\Animal.Designer.cs">
+      <DependentUpon>Animal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animate\FocusedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animate\FocusedForm.Designer.cs">
+      <DependentUpon>FocusedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BlueForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +172,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Animate\Animal.resx">
+      <DependentUpon>Animal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Animate\FocusedForm.resx">
+      <DependentUpon>FocusedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BlueForm.resx">
       <DependentUpon>BlueForm.cs</DependentUpon>
     </EmbeddedResource>
