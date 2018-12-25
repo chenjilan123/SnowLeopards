@@ -16,9 +16,42 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            
+            OrderByMultiProp();
 
             Console.ReadLine();
+        }
+
+        private static void OrderByMultiProp()
+        {
+            List<HerOrder> lst = new List<HerOrder>
+            {
+                new HerOrder(1, 1),
+                new HerOrder(7, 4),
+                new HerOrder(7, 2),
+                new HerOrder(8, 1),
+                new HerOrder(3, 1),
+                new HerOrder(7, 3),
+                new HerOrder(3, 3),
+                new HerOrder(3, 5),
+                new HerOrder(4, 1),
+                new HerOrder(5, 1),
+                new HerOrder(2, 1),
+                new HerOrder(3, 4),
+                new HerOrder(6, 1),
+                new HerOrder(9, 1),
+                new HerOrder(7, 1),
+            };
+
+            //var queryOrder = from i in lst
+            //                 orderby i.Id1, i.Id2
+            //                 select i;
+
+            var queryOrder = lst.OrderBy(i => i.Id1).ThenBy(i => i.Id2);
+
+            foreach (var herorder in queryOrder)
+            {
+                Console.WriteLine($"Id1: {herorder.Id1}, Id2: {herorder.Id2}");
+            }
         }
 
 

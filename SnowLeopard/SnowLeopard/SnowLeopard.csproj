@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InfinityProperty.cs" />
+    <Compile Include="Model\HerOrder.cs" />
     <Compile Include="Model\Memory\LightWeight.cs" />
     <Compile Include="Model\Memory\LightWeightNode.cs" />
     <Compile Include="Model\LonLatCalculate.cs" />
