@@ -27,7 +27,6 @@ namespace SnowLeopard.Controls.Animate
         {
             InitializeComponent();
             _UseSlideAnimation = true;
-            this.TopMost = false;
 
             //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FadeAnimate_FormClosing);
             //this.Load += new System.EventHandler(this.FadeAnimate_Load);
@@ -38,6 +37,10 @@ namespace SnowLeopard.Controls.Animate
 
         }
 
+
+        private const int SW_SHOWNOACTIVATE = 4;
+        [DllImport("User32.dll", CharSet = CharSet.Auto)]
+        public static extern int ShowWindow(IntPtr hWnd, short cmdShow);
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern int AnimateWindow(IntPtr hwand, int dwTime, int dwFlags);
 
@@ -59,8 +62,9 @@ namespace SnowLeopard.Controls.Animate
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            AnimateWindow(this.Handle, SW_TIME, /*AW_ACTIVATE |*/ (_UseSlideAnimation ?
-            AW_HOR_POSITIVE | AW_SLIDE : AW_BLEND));
+            AnimateWindow(this.Handle, SW_TIME, (_UseSlideAnimation ? AW_HOR_POSITIVE | AW_SLIDE : AW_BLEND));
+            //ShowWindow(this.Handle, SW_SHOWNOACTIVATE);
+            //Parent.Focus();
 
         }
         protected override void OnClosing(CancelEventArgs e)
@@ -108,6 +112,5 @@ namespace SnowLeopard.Controls.Animate
             }
         }
         #endregion
-
     }
 }

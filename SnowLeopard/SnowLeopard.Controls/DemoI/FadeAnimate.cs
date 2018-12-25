@@ -37,7 +37,8 @@ namespace SnowLeopard.Controls.DemoI
         {
             await Task.Run(() => Thread.Sleep(2000));
             var animal = new Animal();
-            animal.Show();
+            //animal.TopMost = true; //会导致失去焦点
+            animal.Show(this);
         }
         private void ShowAnimalAsync()
         {
@@ -74,7 +75,7 @@ namespace SnowLeopard.Controls.DemoI
 
         private void FadeAnimate_Load(object sender, EventArgs e)
         {
-            ShowAfterTwoSecond();
+            //ShowAfterTwoSecond();
         }
 
         private async void ShowAfterTwoSecond()
