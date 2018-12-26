@@ -74,6 +74,12 @@
     <Compile Include="DemoII\YDatagridview.Designer.cs">
       <DependentUpon>YDatagridview.cs</DependentUpon>
     </Compile>
+    <Compile Include="DemoII\YTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoII\YTreeView.Designer.cs">
+      <DependentUpon>YTreeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="DemoI\Buttons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DemoII\YDatagridview.resx">
       <DependentUpon>YDatagridview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoII\YTreeView.resx">
+      <DependentUpon>YTreeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DemoI\Buttons.resx">
       <DependentUpon>Buttons.cs</DependentUpon>
