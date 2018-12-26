@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using CCWin.SkinControl;
+using SnowLeopard.Controls;
 
 namespace SnowLeopard
 {
@@ -20,6 +21,7 @@ namespace SnowLeopard
         {
                 "SnowLeopard.Controls.Demo",
                 "SnowLeopard.Controls.DemoI",
+                "SnowLeopard.Controls.DemoII",
         };
         SkinComboBox[] arrCombo = null;
         private Assembly _assembly = null;
@@ -32,6 +34,7 @@ namespace SnowLeopard
             {
                 combo1,
                 combo2,
+                combo3,
             };
             for (int i = 0; i < arrNamespace.Length; i++)
             {
@@ -60,6 +63,11 @@ namespace SnowLeopard
             foreach (var item in types)
             {
                 if (item.Namespace != sNamespace)
+                {
+                    continue;
+                }
+                //过滤特殊类型(SystemInfo...，<c>...（内部建造的异步类？）)
+                if (item.BaseType != typeof(BlueForm) && item.BaseType != typeof(Form))
                 {
                     continue;
                 }

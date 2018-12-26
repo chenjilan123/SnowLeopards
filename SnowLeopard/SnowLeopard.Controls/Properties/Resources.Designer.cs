@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SnowLeopard.Properties {
+namespace SnowLeopard.Controls.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SnowLeopard.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SnowLeopard.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SnowLeopard.Controls.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,16 @@ namespace SnowLeopard.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap ResetToDefault {
+            get {
+                object obj = ResourceManager.GetObject("ResetToDefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

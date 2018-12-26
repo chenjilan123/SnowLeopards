@@ -34,6 +34,8 @@
             this.show2 = new CCWin.SkinControl.SkinButton();
             this.combo2 = new CCWin.SkinControl.SkinComboBox();
             this.isMinimization = new CCWin.SkinControl.SkinCheckBox();
+            this.show3 = new CCWin.SkinControl.SkinButton();
+            this.combo3 = new CCWin.SkinControl.SkinComboBox();
             this.SuspendLayout();
             // 
             // show1
@@ -108,15 +110,43 @@
             this.isMinimization.Text = "自动最小化";
             this.isMinimization.UseVisualStyleBackColor = false;
             // 
+            // show3
+            // 
+            this.show3.BackColor = System.Drawing.Color.Transparent;
+            this.show3.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.show3.DownBack = null;
+            this.show3.Location = new System.Drawing.Point(142, 129);
+            this.show3.MouseBack = null;
+            this.show3.Name = "show3";
+            this.show3.NormlBack = null;
+            this.show3.Size = new System.Drawing.Size(75, 23);
+            this.show3.TabIndex = 1;
+            this.show3.Text = "显示";
+            this.show3.UseVisualStyleBackColor = false;
+            this.show3.Click += new System.EventHandler(this.skinButton1_Click);
+            // 
+            // combo3
+            // 
+            this.combo3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combo3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo3.FormattingEnabled = true;
+            this.combo3.Location = new System.Drawing.Point(11, 130);
+            this.combo3.Name = "combo3";
+            this.combo3.Size = new System.Drawing.Size(121, 22);
+            this.combo3.TabIndex = 2;
+            this.combo3.WaterText = "";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CanResize = false;
-            this.ClientSize = new System.Drawing.Size(231, 132);
+            this.ClientSize = new System.Drawing.Size(235, 166);
             this.Controls.Add(this.isMinimization);
+            this.Controls.Add(this.combo3);
             this.Controls.Add(this.combo2);
+            this.Controls.Add(this.show3);
             this.Controls.Add(this.combo1);
             this.Controls.Add(this.show2);
             this.Controls.Add(this.show1);
@@ -135,5 +165,7 @@
         private CCWin.SkinControl.SkinButton show2;
         private CCWin.SkinControl.SkinComboBox combo2;
         private CCWin.SkinControl.SkinCheckBox isMinimization;
+        private CCWin.SkinControl.SkinButton show3;
+        private CCWin.SkinControl.SkinComboBox combo3;
     }
 }
