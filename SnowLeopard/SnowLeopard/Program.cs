@@ -2,9 +2,11 @@
 using SnowLeopard.Model.Memory;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -16,12 +18,162 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            OrderByMultiProp();
+
+            AutoReset();
+            //FrontAndBackThreadExecuteCompare();
 
             Console.ReadLine();
         }
 
-        private static void OrderByMultiProp()
+        #region AutoReset
+        private static void AutoReset()
+        {
+            //var auto1 = new AutoResetEvent(false);
+            //var auto2 = new AutoResetEvent(true);
+            //PrintAutoReset(auto1);
+            //PrintAutoReset(auto2);
+            //void PrintAutoReset(AutoResetEvent auto)
+            //{
+            //    Console.WriteLine($"{auto..ToString()}");
+            //}
+            //WaitHandle.WaitAll()
+            {
+                //Wait first
+                var auto = new AutoResetEvent(false);
+                ThreadPool.QueueUserWorkItem(new WaitCallback(o =>
+                {
+                    Thread.Sleep(3000);
+                    Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(false) notice send.");
+                    auto.Set();
+                }));
+                auto.WaitOne();
+                Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(false) signal received.\r\n");
+            }
+            {
+                //Set first
+                var auto = new AutoResetEvent(false);
+                ThreadPool.QueueUserWorkItem(new WaitCallback(o =>
+                {
+                    Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(false) notice send.");
+                    auto.Set();
+                }));
+                Thread.Sleep(3000);
+                auto.WaitOne();
+                Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(false) signal received.\r\n");
+            }
+            {
+                //特例=================================================================================================
+                //Wait first
+                var auto = new AutoResetEvent(true);
+                ThreadPool.QueueUserWorkItem(new WaitCallback(o =>
+                {
+                    Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(true) notice send.");
+                    Thread.Sleep(3000);
+                    auto.Set();
+                }));
+                auto.WaitOne();
+                Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(true) signal received.");
+                auto.WaitOne();
+                Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(true) signal received.\r\n");
+            }
+            {
+                //Set first
+                var auto = new AutoResetEvent(true);
+                ThreadPool.QueueUserWorkItem(new WaitCallback(o =>
+                {
+                    Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(true) notice send.");
+                    auto.Set();
+                }));
+                Thread.Sleep(3000);
+                auto.WaitOne();
+                Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}]AutoResetEvent(true) signal received.\r\n");
+            }
+        }
+        #endregion
+
+        #region FrontAndBackThreadExecuteCompare
+        private static void FrontAndBackThreadExecuteCompare()
+        {
+            //Sync
+            var sw = Stopwatch.StartNew();
+            for (int i = 0; i < 3; i++)
+            {
+                LongTimeRequest();
+            }
+            sw.Stop();
+            Console.WriteLine($"Long time sync handler success. used {sw.Elapsed.TotalSeconds.ToString("0.00")}s");
+
+            //Async
+            //Threading.ThreadPool.QueueUserWorkItem(new System.Threading.WaitCallback(一些长期任务));
+            sw.Restart();
+            var autoReset1 = new AutoResetEvent(false);
+            var autoReset2 = new AutoResetEvent(false);
+            var autoReset3 = new AutoResetEvent(false);
+            ThreadPool.QueueUserWorkItem(new WaitCallback(o =>
+            {
+                LongTimeRequest();
+                autoReset1.Set();
+            }));
+            ThreadPool.QueueUserWorkItem(new WaitCallback(o =>
+            {
+                LongTimeRequest();
+                autoReset2.Set();
+            }));
+            ThreadPool.QueueUserWorkItem(new WaitCallback(o =>
+            {
+                LongTimeRequest();
+                Thread.Sleep(5000);
+                autoReset3.Set();
+            }));
+            autoReset1.WaitOne();
+            autoReset2.WaitOne();
+            autoReset3.WaitOne();
+            sw.Stop();
+            Console.WriteLine($"Long time async handler success. used {sw.Elapsed.TotalSeconds.ToString("0.00")}s");
+        }
+
+        private static void LongTimeRequest()
+        {
+            Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}] [{Thread.CurrentThread.ManagedThreadId}] Complex http request started. IsThreadPool: {Thread.CurrentThread.IsThreadPoolThread}");
+
+            object _lock = new object();
+            int k = 0;
+            //100 000 000 = 1.98~2.32s
+            for (int i = 0; i < 200_000_000; i++)
+            {
+                lock(_lock)
+                {
+                    k++;
+                }
+            }
+            //Thread.Sleep(seconds);
+            Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}] [{Thread.CurrentThread.ManagedThreadId}] Complex http request ended. Result: {k}");
+        }
+        private static void ShortTimeRequest()
+        {
+            Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}] Lightweight http request started.");
+            Thread.Sleep(3000);
+            Console.WriteLine($"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")}] Lightweight http request ended.");
+        }
+
+        private static void InvokeThread(Action action, AutoResetEvent autoReset)
+        {
+            new Thread(new ThreadStart(() =>
+            {
+                action.Invoke();
+                autoReset.Set();
+            }))
+            {
+                IsBackground = true
+            }.Start();
+        }
+        #endregion
+
+        #region LINQOrderByMultiProp
+        /// <summary>
+        /// LINQOrderByMultiProp
+        /// </summary>
+        private static void LINQOrderByMultiProp()
         {
             List<HerOrder> lst = new List<HerOrder>
             {
@@ -53,7 +205,7 @@ namespace SnowLeopard
                 Console.WriteLine($"Id1: {herorder.Id1}, Id2: {herorder.Id2}");
             }
         }
-
+        #endregion
 
         #region Memory
         private static void ClassMemory()
