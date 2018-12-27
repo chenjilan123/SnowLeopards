@@ -59,6 +59,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadBegin.cs" />
+    <Compile Include="ThreadPassParameter.cs" />
+    <Compile Include="ThreadPriorities.cs" />
+    <Compile Include="ThreadStates.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

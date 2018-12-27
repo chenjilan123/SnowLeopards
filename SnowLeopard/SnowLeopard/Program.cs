@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +24,12 @@ namespace SnowLeopard
 
         static void Main()
         {
-            Console.WriteLine("hehe");
+            //ThreadBegin.Run();
+
+            ThreadPassParameter.Run();
+
+
+            Trace.Assert(false, "heheh");
         }
     }
 }
