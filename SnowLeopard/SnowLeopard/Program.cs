@@ -8,6 +8,7 @@ namespace SnowLeopard
 {
     static class Program
     {
+        #region FormMode
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,6 +19,7 @@ namespace SnowLeopard
         //    Application.SetCompatibleTextRenderingDefault(false);
         //    Application.Run(new Main());
         //}
+        #endregion
 
         static void Main()
         {
