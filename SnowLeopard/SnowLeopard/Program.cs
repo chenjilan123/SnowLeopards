@@ -28,8 +28,9 @@ namespace SnowLeopard
             {
                 //ThreadBegin.Run();
                 //ThreadPassParameter.Run();
-                ThreadStates.Run();
-
+                //ThreadStates.Run();
+                //ThreadRaceCondition.Run();
+                ThreadDeadLock.Run();
 
                 Console.WriteLine("Main thread completed");
                 Console.ReadLine();

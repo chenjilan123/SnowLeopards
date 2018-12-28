@@ -26,6 +26,9 @@ namespace SnowLeopard
             //优先级高的已启动线程会分配更多的CPU资源。
             //晚创建的Lowest优先级的线程会比早创建的更早完成。
             //Hightest享有远远多于Lowest的资源。
+
+            //以下测试时，线程有三种状态
+            //unstarted, running, stopped
             var priority = 0;
             var threads = new Thread[20];
             for (int i = 0; i < threads.Length; i++)
