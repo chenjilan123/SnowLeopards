@@ -24,12 +24,21 @@ namespace SnowLeopard
 
         static void Main()
         {
-            //ThreadBegin.Run();
+            try
+            {
+                //ThreadBegin.Run();
+                //ThreadPassParameter.Run();
+                ThreadStates.Run();
 
-            ThreadPassParameter.Run();
 
-
-            Trace.Assert(false, "heheh");
+                Console.WriteLine("Main thread completed");
+                Console.ReadLine();
+                //Trace.Assert(false, "heheh");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
