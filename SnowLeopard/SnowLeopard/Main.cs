@@ -98,7 +98,7 @@ namespace SnowLeopard
 
         private void CreateForm(string prefixNamespace, SkinComboBox combo)
         {
-            var typeName = $"{prefixNamespace}.{combo.SelectedItem.ToString()}";
+            var typeName = prefixNamespace + "." + combo.SelectedItem.ToString();//$"{prefixNamespace}.{combo.SelectedItem.ToString()}";
             var type = _assembly.GetType(typeName);
             if (type == null)
             {

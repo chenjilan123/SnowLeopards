@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.Name = "KeyCtrl";
-            this.Size = new System.Drawing.Size(117, 40);
+            this.Size = new System.Drawing.Size(126, 37);
             this.ResumeLayout(false);
 
         }

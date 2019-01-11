@@ -117,4 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="A_状态_停止报警" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-状态-停止报警.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A_状态_发送" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-状态-发送.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A_状态_实时位置" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-状态-实时位置.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A_状态_属性" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-状态-属性.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A_状态_拍照" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-状态-拍照.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="A_状态_轨迹回放" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\A-状态-轨迹回放.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B_状态_停止报警" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B-状态-停止报警.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B_状态_发送" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B-状态-发送.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B_状态_实时位置" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B-状态-实时位置.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B_状态_属性" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B-状态-属性.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B_状态_拍照" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B-状态-拍照.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="B_状态_轨迹回放" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B-状态-轨迹回放.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

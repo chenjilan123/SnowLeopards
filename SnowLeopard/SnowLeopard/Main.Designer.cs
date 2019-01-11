@@ -97,7 +97,7 @@
             this.isMinimization.BackColor = System.Drawing.Color.Transparent;
             this.isMinimization.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.isMinimization.DownBack = null;
-            this.isMinimization.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.isMinimization.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.isMinimization.Location = new System.Drawing.Point(11, 46);
             this.isMinimization.MouseBack = null;
             this.isMinimization.Name = "isMinimization";

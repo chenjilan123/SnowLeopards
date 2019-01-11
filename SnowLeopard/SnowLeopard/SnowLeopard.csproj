@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -34,6 +34,26 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>SnowLeopard.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSkin, Version=16.1.14.2, Culture=neutral, processorArchitecture=MSIL" />
@@ -87,6 +107,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ResetToDefault.png" />
+    <None Include="Resources\B-状态-轨迹回放.png" />
+    <None Include="Resources\B-状态-拍照.png" />
+    <None Include="Resources\B-状态-实时位置.png" />
+    <None Include="Resources\B-状态-属性.png" />
+    <None Include="Resources\B-状态-停止报警.png" />
+    <None Include="Resources\A-状态-发送.png" />
+    <None Include="Resources\A-状态-轨迹回放.png" />
+    <None Include="Resources\A-状态-拍照.png" />
+    <None Include="Resources\A-状态-实时位置.png" />
+    <None Include="Resources\A-状态-属性.png" />
+    <None Include="Resources\A-状态-停止报警.png" />
+    <None Include="Resources\B-状态-发送.png" />
     <Content Include="Skin\CSkin.dll" />
     <Content Include="Skin\CSkin更新文档.txt" />
     <Content Include="Skin\【必看】使用教程.txt" />
