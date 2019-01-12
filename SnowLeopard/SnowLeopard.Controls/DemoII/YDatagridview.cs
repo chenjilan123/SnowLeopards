@@ -19,15 +19,41 @@ namespace SnowLeopard.Controls.DemoII
 
         private void YDatagridview_Load(object sender, EventArgs e)
         {
-            this.spaceships.DataSource = SpaceShips.GetSpaceShips();
+            this.spaceships.DataSource = SpaceShips.GetSpaceShipsTable();//SpaceShips.GetSpaceShips();
 
             spaceships.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(235, 240, 250);
+        }
+
+        private void spaceships_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 
 
     public static class SpaceShips
     {
+        public static DataTable GetSpaceShipsTable()
+        {
+            var dt = new DataTable();
+            dt.Columns.Add(new DataColumn("Weight", typeof(float)));
+            dt.Columns.Add(new DataColumn("ShipName"));
+            dt.Columns.Add(new DataColumn("Motive"));
+            dt.Columns.Add(new DataColumn("Remark"));
+            dt.Columns.Add(new DataColumn("ProduceYear"));
+
+            dt.Columns.Add(new DataColumn("Number", typeof(int), "Weight * 2"));
+            dt.Columns.Add(new DataColumn("NumberStr", typeof(string), "[Weight]秒"));
+
+            dt.Rows.Add(8000.745F, "Shenzhou 5", "500khz", "First", new DateTime(2006, 1, 1));
+            dt.Rows.Add(9500.455F, "Shenzhou 6", "500khz", "Second", new DateTime(2006, 1, 1));
+            dt.Rows.Add(6500.740F, "Shenzhou 7", "500khz", "Third", new DateTime(2006, 1, 1));
+            dt.Rows.Add(7010.421F, "Shenzhou 8", "500khz", "Fourth", new DateTime(2006, 1, 1));
+
+
+
+            return dt;
+        }
         public static SpaceShip[] GetSpaceShips()
         {
             return new[]

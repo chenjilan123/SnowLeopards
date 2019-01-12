@@ -125,6 +125,7 @@
             this.spaceships.RowTemplate.Height = 23;
             this.spaceships.Size = new System.Drawing.Size(765, 424);
             this.spaceships.TabIndex = 1;
+            this.spaceships.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.spaceships_CellContentClick);
             // 
             // YDatagridview
             // 

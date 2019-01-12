@@ -8,15 +8,16 @@ namespace SnowLeopard.Controls
 {
     public class SpaceShip
     {
+        private float weight;
         public SpaceShip(float weight, string name, string motive, string remark, DateTime produceYear)
         {
-            Weight = weight;
+            this.weight = weight;
             ShipName = name;
             Motive = motive;
             Remark = remark;
             ProduceYear = produceYear;
         }
-        public float Weight { get; set; }
+        public string Weight { get { return weight + "kg"; } }
         public string ShipName { get; set; }
         public string Motive { get; set; }
         public string Remark { get; set; }
