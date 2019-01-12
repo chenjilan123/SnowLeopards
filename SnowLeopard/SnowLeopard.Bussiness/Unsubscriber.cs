@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SnowLeopard.Bussiness
 {
-    internal class Unsubscriber<BaggageInfo> : IDisposable
+    internal class Unsubscriber<T> : IDisposable
     {
-        private List<IObserver<BaggageInfo>> _observers;
-        private IObserver<BaggageInfo> _observer;
+        private List<IObserver<T>> _observers;
+        private IObserver<T> _observer;
 
-        internal Unsubscriber(List<IObserver<BaggageInfo>> observers, IObserver<BaggageInfo> observer)
+        internal Unsubscriber(List<IObserver<T>> observers, IObserver<T> observer)
         {
             this._observers = observers;
             this._observer = observer;
