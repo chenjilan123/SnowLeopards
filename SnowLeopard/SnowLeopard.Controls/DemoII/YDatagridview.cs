@@ -43,7 +43,7 @@ namespace SnowLeopard.Controls.DemoII
             dt.Columns.Add(new DataColumn("ProduceYear"));
 
             dt.Columns.Add(new DataColumn("Number", typeof(int), "Weight * 2"));
-            dt.Columns.Add(new DataColumn("NumberStr", typeof(string), "[Weight]秒"));
+            //dt.Columns.Add(new DataColumn("NumberStr", typeof(string), "[Weight]秒"));
 
             dt.Rows.Add(8000.745F, "Shenzhou 5", "500khz", "First", new DateTime(2006, 1, 1));
             dt.Rows.Add(9500.455F, "Shenzhou 6", "500khz", "Second", new DateTime(2006, 1, 1));
