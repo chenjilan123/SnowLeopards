@@ -18,9 +18,8 @@ namespace SnowLeopard
     {
         static void Main()
         {
-
-            AutoReset();
-            //FrontAndBackThreadExecuteCompare();
+            var f = 500F;
+            Console.WriteLine(f.ToString("0.00秒"));
 
             Console.ReadLine();
         }
