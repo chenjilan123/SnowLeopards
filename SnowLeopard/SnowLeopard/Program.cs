@@ -21,6 +21,15 @@ namespace SnowLeopard
             var f = 500F;
             Console.WriteLine(f.ToString("0.00秒"));
 
+            var s = "5秒";
+            //var chars = "秒".ToCharArray();
+            //foreach (var c in chars)
+            //{
+            //    Console.WriteLine(c);
+            //}
+            //Console.WriteLine(s.TrimEnd(chars));
+            Console.WriteLine(s.TrimEnd('秒'));
+
             Console.ReadLine();
         }
 
