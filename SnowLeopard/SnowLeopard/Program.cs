@@ -18,6 +18,29 @@ namespace SnowLeopard
     {
         static void Main()
         {
+            XmlDocumentBuild();
+
+            Console.ReadLine();
+        }
+
+        private static void XmlDocumentBuild()
+        {
+            //Not format
+            var xmlDoc = new XElement("PathParam");
+            xmlDoc.Add();
+            xmlDoc.Add(new XElement("Segment", "50"));
+            Console.WriteLine(xmlDoc);
+
+            //format
+            var doc = new XDocument();
+            doc.Add(xmlDoc);
+            
+            Console.WriteLine(doc.ToString());
+        }
+
+        #region NumberFormation
+        private static void NumberFormation()
+        {
             var f = 500F;
             Console.WriteLine(f.ToString("0.00秒"));
 
@@ -30,8 +53,8 @@ namespace SnowLeopard
             //Console.WriteLine(s.TrimEnd(chars));
             Console.WriteLine(s.TrimEnd('秒'));
 
-            Console.ReadLine();
         }
+        #endregion
 
         #region AutoReset
         private static void AutoReset()
