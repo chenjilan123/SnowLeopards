@@ -18,11 +18,35 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            XmlDocumentBuild();
+            UintParse();
 
             Console.ReadLine();
         }
 
+        #region BoolOpOrder
+        private static void BoolOpOrder()
+        {
+            Console.WriteLine(false && false || true);
+            Console.WriteLine(true || false && false);
+        }
+        #endregion
+        #region UintParse
+        private static void UintParse()
+        {
+            string s = "50";
+            if (uint.TryParse(s, System.Globalization.NumberStyles.HexNumber, null, out uint value))
+            //if (uint.TryParse(s, out uint value))
+            {
+                Console.WriteLine(value);
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+        }
+        #endregion
+
+        #region XmlDocumentBuild
         private static void XmlDocumentBuild()
         {
             //Not format
@@ -34,9 +58,10 @@ namespace SnowLeopard
             //format
             var doc = new XDocument();
             doc.Add(xmlDoc);
-            
+
             Console.WriteLine(doc.ToString());
         }
+        #endregion
 
         #region NumberFormation
         private static void NumberFormation()
@@ -172,7 +197,7 @@ namespace SnowLeopard
             //100 000 000 = 1.98~2.32s
             for (int i = 0; i < 200_000_000; i++)
             {
-                lock(_lock)
+                lock (_lock)
                 {
                     k++;
                 }
