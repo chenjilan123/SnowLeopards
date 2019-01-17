@@ -18,10 +18,55 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            UintParse();
-
             Console.ReadLine();
         }
+
+        #region DifferentBetweenClassAndStruct
+        private static void DifferentBetweenClassAndStruct()
+        {
+            BookReceived += b =>
+            {
+                Console.WriteLine($"1.Receive book: {b.Value}");
+                b.Value = 5;
+            };
+            BookReceived += b => Console.WriteLine($"2.Receive book: {b.Value}");
+            BookReceived += b => Console.WriteLine($"3.Receive book: {b.Value}");
+
+            AppleReceived += a =>
+            {
+                Console.WriteLine($"1.Receive apple: {a.Value}");
+                a.Value = 5;
+            };
+            AppleReceived += a => Console.WriteLine($"2.Receive apple: {a.Value}");
+            AppleReceived += a => Console.WriteLine($"3.Receive apple: {a.Value}");
+
+            var book = new Book() { Value = 1 };
+            var apple = new Apple() { Value = 1 };
+            OnBookReceived(book);
+            OnAppleReceived(apple);
+        }
+        private static event Action<Book> BookReceived;
+        private static event Action<Apple> AppleReceived;
+
+        private static void OnBookReceived(Book book)
+        {
+            BookReceived?.Invoke(book);
+        }
+        private static void OnAppleReceived(Apple apple)
+        {
+            AppleReceived?.Invoke(apple);
+        }
+
+        private class Book
+        {
+            public int Value { get; set; }
+        }
+
+        private struct Apple
+        {
+            public int Value { get; set; }
+        }
+        #endregion
 
         #region BoolOpOrder
         private static void BoolOpOrder()
@@ -30,6 +75,7 @@ namespace SnowLeopard
             Console.WriteLine(true || false && false);
         }
         #endregion
+
         #region UintParse
         private static void UintParse()
         {
