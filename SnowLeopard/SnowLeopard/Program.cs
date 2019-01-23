@@ -3,6 +3,7 @@ using SnowLeopard.Model.Memory;
 using SnowLeopard.Pub;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -20,11 +21,50 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            ChineseNumber();
-            //SqlXmlProcess();
+            DataTableFilter();
 
             Console.ReadLine();
         }
+        #region DataTableFilter
+        private static void DataTableFilter()
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("Id");
+            dt.Columns.Add("Check");
+            for (int i = 0; i < 20; i++)
+            {
+                var dr = dt.NewRow();
+                dr["Id"] = i;
+                switch (i % 4)
+                {
+                    case 0:
+                        dr["Check"] = "true";
+                        break;
+                    case 1:
+                        dr["Check"] = "True";
+                        break;
+                    case 2:
+                        dr["Check"] = true;
+                        break;
+                    case 3:
+                        dr["Check"] = false; //只有这种未满足条件
+                        break;
+                }
+                dt.Rows.Add(dr);
+            }
+            //以下四种条件等价
+            var drChecked = dt.Select("Check = 'true'");
+            //var drChecked = dt.Select("Check = 'True'");
+            //var drChecked = dt.Select("Check = True");
+            //var drChecked = dt.Select("Check = true");
+            foreach (var dr in drChecked)
+            {
+                Console.WriteLine($"Row[{dr["id"]}] is checked. value: {dr["check"]}");
+            }
+
+            //用DataGridView设置值间接影响DataTable的值会导致过滤错误。
+        }
+        #endregion
 
         #region ChineseNumber
         private static void ChineseNumber()
