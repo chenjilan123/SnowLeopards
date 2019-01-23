@@ -1,10 +1,12 @@
 ﻿using SnowLeopard.Model;
 using SnowLeopard.Model.Memory;
+using SnowLeopard.Pub;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,8 +20,128 @@ namespace SnowLeopard
     {
         static void Main()
         {
+            ChineseNumber();
+            //SqlXmlProcess();
+
             Console.ReadLine();
         }
+
+        #region ChineseNumber
+        private static void ChineseNumber()
+        {
+            ChineseHelper.ConsoleTest();
+        }
+        #endregion
+
+        #region SqlXmlProcess
+        private const string Transport =
+@"<TransportInfo>
+  <Transport>
+    <TransportName>李某某</TransportName>
+    <TransportTelephone>13550550560</TransportTelephone>
+    <TransportLevel>1</TransportLevel>
+  </Transport>
+  <Transport>
+    <TransportName>123</TransportName>
+    <TransportLevel>2</TransportLevel>
+  </Transport>
+  <Transport>
+    <TransportName>张三</TransportName>
+    <TransportTelephone>15120200457</TransportTelephone>
+    <TransportLevel>3</TransportLevel>
+  </Transport>
+</TransportInfo>";
+        private static void SqlXmlProcess()
+        {
+            var xEle = XElement.Parse(Transport);
+            foreach (var xTransport in xEle.Elements())
+            {
+                var xName = xTransport.Element("TransportName");
+                var xTelephone = xTransport.Element("TransportTelephone");
+                var xLevel = xTransport.Element("TransportLevel");
+
+                var sTransportInfo = GetTransportInfo(xName, xTelephone, xLevel);
+                Console.WriteLine(sTransportInfo.TrimEnd(new char[] { ';', ' ' }));
+            }
+            //Console.WriteLine(xEle);
+        }
+
+        private static string GetTransportInfo(XElement xName, XElement xTelephone, XElement xLevel)
+        {
+            var sName = string.Empty;
+            var sTelephone = string.Empty;
+            int iLevel = 0;
+
+            if (xName != null)
+            {
+                sName = xName.Value;
+            }
+            if (xTelephone != null)
+            {
+                sTelephone = xTelephone.Value;
+            }
+            if (xLevel != null)
+            {
+                iLevel = int.Parse(xLevel.Value);
+            }
+            var sTransportLevel = ChineseHelper.GetNumber(iLevel);
+            if (!string.IsNullOrEmpty(sTransportLevel))
+            {
+                sTransportLevel = "第" + sTransportLevel;
+            }
+            return $"{sTransportLevel}押运员：{sName}-{sTelephone}; ";
+        }
+        #endregion
+
+        #region NameofObject
+        private static void NameofObject()
+        {
+            var iValue = 0;
+            Console.WriteLine(nameof(iValue));
+            Console.WriteLine(nameof(Main));
+            Console.WriteLine(nameof(Program));
+            Console.WriteLine(nameof(SnowLeopard));
+
+            var generic1 = new GenericClass<int>();
+            var generic2 = new GenericClass<Student>();
+            generic1.PrintName();
+            generic2.PrintName();
+        }
+
+        public class GenericClass<T>
+        {
+            public void PrintName()
+            {
+                Console.WriteLine(nameof(T));
+            }
+        }
+        #endregion
+
+        #region MathAlgorithm
+        private static void MathAlgorithm()
+        {
+            //Console.WriteLine(Math.Pow(50.0, 3));
+
+            var sLon = "123.501057";
+            var sLat = "27.475012";
+            var lonBase = 123.501058D;
+            var latBase = 27.475055D;
+
+            var i = 50000000;
+
+            var sw = Stopwatch.StartNew();
+            while (i-- > 0)
+            {
+                if (double.TryParse(sLon, out double lon) && double.TryParse(sLat, out double lat))
+                {
+                    var dis = Math.Sqrt((Math.Pow(lonBase - lon, 2) + Math.Pow(latBase - lat, 2)));
+                    //Console.WriteLine(dis.ToString("0.000000"));
+                }
+            }
+            sw.Stop();
+            Console.WriteLine($"Total times: {sw.Elapsed.TotalSeconds}s");
+        }
+        #endregion
 
         #region DifferentBetweenClassAndStruct
         private static void DifferentBetweenClassAndStruct()
@@ -378,6 +500,7 @@ namespace SnowLeopard
         //}
         #endregion
 
+        #region Others
         private static Triangle t;
         private static void CustomStructDefaultValue()
         {
@@ -488,5 +611,6 @@ namespace SnowLeopard
                 return $"{sBegin},{sCur}";
             }));
         }
+        #endregion
     }
 }
