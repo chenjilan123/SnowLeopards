@@ -112,11 +112,26 @@
       <DependentUpon>BlueForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Container\IconContainer.cs" />
+    <Compile Include="DemoII\DataErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DemoII\ImageButton.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DemoII\ImageButton.Designer.cs">
       <DependentUpon>ImageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemoII\RedCross.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoII\RedCross.Designer.cs">
+      <DependentUpon>RedCross.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemoII\RedCross1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoII\RedCross1.Designer.cs">
+      <DependentUpon>RedCross1.cs</DependentUpon>
     </Compile>
     <Compile Include="DemoII\YTabControl.cs">
       <SubType>Form</SubType>
@@ -287,6 +302,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DemoII\ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoII\RedCross.resx">
+      <DependentUpon>RedCross.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoII\RedCross1.resx">
+      <DependentUpon>RedCross1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DemoII\YDatagridview.resx">
       <DependentUpon>YDatagridview.cs</DependentUpon>

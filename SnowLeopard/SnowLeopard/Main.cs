@@ -26,7 +26,7 @@ namespace SnowLeopard
         SkinComboBox[] arrCombo = null;
         private Assembly _assembly = null;
         private Dictionary<string, dynamic> _formInstances = new Dictionary<string, dynamic>();
-        public Main()
+        public Main(string openForm)
         {
             InitializeComponent();
             //this.ShowInTaskbar = false; //这样缩小化后会找不到。
@@ -39,6 +39,24 @@ namespace SnowLeopard
             for (int i = 0; i < arrNamespace.Length; i++)
             {
                 LoadControls(arrNamespace[i], arrCombo[i]);
+            }
+
+            ShowDefaultOpenForm(openForm);
+        }
+
+        private void ShowDefaultOpenForm(string openForm)
+        {
+            for (int i = 0; i < arrCombo.Length; i++)
+            {
+                var combo = arrCombo[i];
+                foreach (var item in combo.Items)
+                {
+                    if (item.ToString() == openForm)
+                    {
+                        CreateForm(i, openForm);
+                        return;
+                    }
+                }
             }
         }
 
@@ -83,12 +101,7 @@ namespace SnowLeopard
                 Button button = sender as Button;
                 var number = button.Name.Substring(button.Name.Length - 1);
                 int index = int.Parse(number.ToString()) - 1;
-                CreateForm(arrNamespace[index], arrCombo[index]);
-
-                if(isMinimization.Checked)
-                {
-                    this.WindowState = FormWindowState.Minimized;
-                }
+                CreateForm(index);
             }
             catch (Exception ex)
             {
@@ -96,9 +109,18 @@ namespace SnowLeopard
             }
         }
 
-        private void CreateForm(string prefixNamespace, SkinComboBox combo)
+        private void CreateForm(int index, string openForm = "")
         {
-            var typeName = prefixNamespace + "." + combo.SelectedItem.ToString();//$"{prefixNamespace}.{combo.SelectedItem.ToString()}";
+            CreateForm(arrNamespace[index], arrCombo[index], openForm);
+            if (isMinimization.Checked)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private void CreateForm(string prefixNamespace, SkinComboBox combo, string openForm)
+        {
+            var typeName = prefixNamespace + "." + (string.IsNullOrEmpty(openForm) ? combo.SelectedItem.ToString() : openForm);//$"{prefixNamespace}.{combo.SelectedItem.ToString()}";
             var type = _assembly.GetType(typeName);
             if (type == null)
             {

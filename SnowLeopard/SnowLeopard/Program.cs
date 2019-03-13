@@ -14,9 +14,13 @@ namespace SnowLeopard
         [STAThread]
         static void Main()
         {
+            const string RedCross = "RedCross";
+            const string RedCross1 = "RedCross1";
+            const string DataErrorForm = "DataErrorForm";
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Main(RedCross1));
         }
     }
 }
