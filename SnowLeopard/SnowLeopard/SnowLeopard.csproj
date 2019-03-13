@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InfinityProperty.cs" />
+    <Compile Include="Model\Geohash.cs" />
     <Compile Include="Model\HerOrder.cs" />
     <Compile Include="Model\Memory\LightWeight.cs" />
     <Compile Include="Model\Memory\LightWeightNode.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Model\Memory\TreeNodeEx.cs" />
     <Compile Include="Model\Memory\Vehicle.cs" />
     <Compile Include="Model\Memory\Redundancy.cs" />
+    <Compile Include="Model\IMyInterface.cs" />
     <Compile Include="Model\Triangle.cs" />
     <Compile Include="OverrideOrder.cs" />
     <Compile Include="Model\Student.cs" />

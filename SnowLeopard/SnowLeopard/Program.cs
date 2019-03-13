@@ -21,10 +21,97 @@ namespace SnowLeopard
     {
         static void Main()
         {
-            DataTableFilter();
-
+            try
+            {
+                var name = nameof(Main);
+                Console.WriteLine(name);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
             Console.ReadLine();
         }
+        #region ThrowException
+        private static void ThrowException()
+        {
+            throw new Exception("Halo !");
+        }
+
+        #endregion
+
+        #region Geohash
+        private static void GeohashCompute()
+        {
+            Console.WriteLine(Geohash.Encode(27.25, 117.501245, 5));
+            Console.WriteLine(Geohash.Encode(30.120334, 109.303745, 5));
+            Console.WriteLine(Geohash.Encode(30.120334, 113.723745, 5));
+            Console.WriteLine(Geohash.Encode(30.120334, 110.223745, 5));
+            //Console.WriteLine(Geohash.Encode(30.120334, 109.303745, 5)); 
+        }
+        #endregion
+
+        #region DecimalPrecision
+        private static void DecimalPrecision()
+        {
+            var mValue1 = 0.2M;
+            var mValue2 = 0.5M;
+            var mValue3 = mValue1 / mValue2;
+            Console.WriteLine(mValue3);
+
+            var dValue1 = 0.2D;
+            var dValue2 = 0.5;
+            var dValue3 = dValue1 / dValue2;
+            Console.WriteLine(dValue3);
+
+            var dValue = 0.394D;
+            Console.WriteLine(dValue.ToString("0.00"));
+            //Console.WriteLine(ushort.MaxValue);
+            //Console.WriteLine(ushort.MinValue);
+
+        }
+        #endregion
+
+        #region CreateInterface
+        private static IMyInterface CreateInterface()
+        {
+            //return new HerOrder(1, 2);
+            return null;
+        }
+        #endregion
+
+        #region CompareWithInt
+        private static void CompareWithInt()
+        {
+            int i = 50;
+            double d = 50D;
+            Console.WriteLine(i == d); //True
+            //Console.WriteLine(i.CompareTo(d)); //Throw Exception
+            //Console.WriteLine(i.Equals(d)); //False
+        }
+        #endregion
+
+        #region NameOf
+        private static void NameOfProperty()
+        {
+            var s = nameof(string.Empty);
+            Console.WriteLine(s);
+        }
+        #endregion
+
+        #region Encoding
+        private static void GetEncodings()
+        {
+            //var encoding = Encoding.GetEncoding("gb2312");
+            //Console.WriteLine(encoding.EncodingName);
+
+            foreach (var encoding in Encoding.GetEncodings())
+            {
+                Console.WriteLine(encoding.DisplayName);
+            }
+        }
+        #endregion
+
         #region DataTableFilter
         private static void DataTableFilter()
         {
