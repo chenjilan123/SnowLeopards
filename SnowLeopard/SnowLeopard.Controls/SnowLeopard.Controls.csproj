@@ -115,6 +115,12 @@
     <Compile Include="DemoII\DataErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DemoII\IEBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoII\IEBrowser.Designer.cs">
+      <DependentUpon>IEBrowser.cs</DependentUpon>
+    </Compile>
     <Compile Include="DemoII\ImageButton.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -299,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DemoControl\KeyCtrl.resx">
       <DependentUpon>KeyCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoII\IEBrowser.resx">
+      <DependentUpon>IEBrowser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DemoII\ImageButton.resx">
       <DependentUpon>ImageButton.cs</DependentUpon>
@@ -715,6 +724,7 @@
     <Content Include="Icon\DemoIcon\立即刷新.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Web\fullscrenClient.html" />
     <None Include="packages.config" />
     <None Include="Resources\B-状态-停止报警.png" />
     <None Include="Resources\B-状态-属性.png" />

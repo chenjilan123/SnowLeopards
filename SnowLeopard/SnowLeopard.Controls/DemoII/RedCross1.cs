@@ -32,7 +32,7 @@ namespace SnowLeopard.Controls.DemoII
         {
             try
             {
-                dt.Rows.Add("x");
+                dt.Rows.Add("x"); //Throw a exception
             }
             catch (Exception ex)
             {

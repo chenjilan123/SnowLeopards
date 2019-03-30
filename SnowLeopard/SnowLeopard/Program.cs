@@ -17,10 +17,11 @@ namespace SnowLeopard
             const string RedCross = "RedCross";
             const string RedCross1 = "RedCross1";
             const string DataErrorForm = "DataErrorForm";
+            const string IEBrowser = "IEBrowser";
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main(RedCross1));
+            Application.Run(new Main(IEBrowser));
         }
     }
 }
