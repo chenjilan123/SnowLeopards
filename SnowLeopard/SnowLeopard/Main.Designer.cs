@@ -95,6 +95,8 @@
             // 
             this.isMinimization.AutoSize = true;
             this.isMinimization.BackColor = System.Drawing.Color.Transparent;
+            this.isMinimization.Checked = true;
+            this.isMinimization.CheckState = System.Windows.Forms.CheckState.Checked;
             this.isMinimization.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.isMinimization.DownBack = null;
             this.isMinimization.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

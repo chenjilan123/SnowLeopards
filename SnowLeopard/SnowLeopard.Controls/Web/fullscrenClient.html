@@ -9,9 +9,28 @@
         function Test() {
             alert("Hello World!");
         }
+
+        function IsFullScrean() {
+            var isFullScrean = window.external.IsFullScrean();
+            alert(isFullScrean);
+        }
+
+        function AlertMessage() {
+            var isFullScrean = window.external.IsFullScrean();
+        }
     </script>
 </head>
 <body>
+    <input id="Button5" type="button" value="FullScrean" onclick="window.external.FullScrean()" />
+    <p />
+    <input id="Button4" type="button" value="CancelFullScrean" onclick="window.external.CancelFullScrean()" />
+    <p />
+    <input id="Button3" type="button" value="IsFullScrean" onclick="IsFullScrean()" />
+    <p />
+    <input id="Button2" type="button" value="TestCS" onclick="window.external.Test()" />
+    <p />
     <input id="Button1" type="button" value="button" onclick="Test()" />
+    <p />
+    <input id="Button0" type="button" value="Alert" onclick="AlertMessage()" />
 </body>
 </html>

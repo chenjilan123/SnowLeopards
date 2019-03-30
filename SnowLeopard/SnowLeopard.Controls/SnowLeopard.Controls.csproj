@@ -292,6 +292,9 @@
     <Compile Include="UserInput.Designer.cs">
       <DependentUpon>UserInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="Web\BSObject\BSFullScrean.cs" />
+    <Compile Include="Web\BSObject\BSObject.cs" />
+    <Compile Include="Web\CSObject\ObjForFullScrean.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Animate\Animal.resx">
