@@ -27,7 +27,9 @@ namespace SnowLeopard.Controls.Web.CSObject
 
         public void FullScrean()
         {
+            if (_bIsFullScrean) return;
             Form frm = new Form();
+            frm.Icon = _browser.Icon;
             frm.FormClosing += frm_FormClosing;
             frm.Tag = _ctrlFullScrean.Parent;
             frm.Controls.Add(_ctrlFullScrean);
@@ -35,6 +37,10 @@ namespace SnowLeopard.Controls.Web.CSObject
             _bIsFullScrean = true;
             Rectangle rect = new Rectangle();
             rect = Screen.GetBounds(_ctrlFullScrean);
+
+            _browser.ShowInTaskbar = false;
+            _browser.Visible = false;
+
             frm.Show();
             frm.DesktopBounds = rect;
             frm.BringToFront();
@@ -55,6 +61,9 @@ namespace SnowLeopard.Controls.Web.CSObject
                     //frm.Controls.Remove(this);
                     //frm.Close();
                 }
+                _browser.ShowInTaskbar = true;
+                _browser.Visible = true;
+
                 _bIsFullScrean = false;
             }
             catch (Exception ex)
@@ -65,6 +74,7 @@ namespace SnowLeopard.Controls.Web.CSObject
 
         public void CancelFullScrean()
         {
+            if (!_bIsFullScrean) return;
             try
             {
                 Form frm = _ctrlFullScrean.Parent as Form;

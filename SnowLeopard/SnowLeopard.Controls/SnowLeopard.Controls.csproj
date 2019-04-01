@@ -727,6 +727,7 @@
     <Content Include="Icon\DemoIcon\立即刷新.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Icon\ShortcutIcon.ico" />
     <Content Include="Web\fullscrenClient.html" />
     <None Include="packages.config" />
     <None Include="Resources\B-状态-停止报警.png" />

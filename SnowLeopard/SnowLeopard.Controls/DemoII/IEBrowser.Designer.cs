@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IEBrowser));
             this.wb = new System.Windows.Forms.WebBrowser();
             this.pnlBrowser = new System.Windows.Forms.Panel();
             this.pnlOperation = new System.Windows.Forms.Panel();
@@ -81,6 +82,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlBrowser);
             this.Controls.Add(this.pnlOperation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IEBrowser";
             this.Text = "IEBrowser";
             this.Load += new System.EventHandler(this.IEBrowser_Load);

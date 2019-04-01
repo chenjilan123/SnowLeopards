@@ -51,7 +51,7 @@ namespace SnowLeopard.Controls.DemoII
         #region 初始化CS对象
         private void InitCSScript(WebBrowser browser)
         {
-            _bsFullScrean = new BSFullScrean(browser.Document);
+            _bsFullScrean = new BSFullScrean(this, browser.Document);
         }
         #endregion
 

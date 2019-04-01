@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnowLeopard.Controls.DemoII;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,11 @@ namespace SnowLeopard.Controls.Web.BSObject
 {
     public class BSFullScrean : BSObject
     {
-        public BSFullScrean(HtmlDocument doc) : base(doc) { }
+        private readonly IEBrowser _browser;
+        public BSFullScrean(IEBrowser browser, HtmlDocument doc) : base(doc)
+        {
+            this._browser = browser;
+        }
 
         public void Test()
         {
