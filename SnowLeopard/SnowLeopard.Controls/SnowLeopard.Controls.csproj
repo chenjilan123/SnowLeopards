@@ -139,6 +139,12 @@
     <Compile Include="DemoII\RedCross1.Designer.cs">
       <DependentUpon>RedCross1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DemoII\RoundedText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemoII\RoundedText.Designer.cs">
+      <DependentUpon>RoundedText.cs</DependentUpon>
+    </Compile>
     <Compile Include="DemoII\YTabControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DemoII\RedCross1.resx">
       <DependentUpon>RedCross1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemoII\RoundedText.resx">
+      <DependentUpon>RoundedText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DemoII\YDatagridview.resx">
       <DependentUpon>YDatagridview.cs</DependentUpon>

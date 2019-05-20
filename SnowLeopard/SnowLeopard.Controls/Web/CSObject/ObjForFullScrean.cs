@@ -28,6 +28,9 @@ namespace SnowLeopard.Controls.Web.CSObject
         public void FullScrean()
         {
             if (_bIsFullScrean) return;
+            _browser.ShowInTaskbar = false;
+            _browser.Visible = false;
+
             Form frm = new Form();
             frm.Icon = _browser.Icon;
             frm.FormClosing += frm_FormClosing;
@@ -37,9 +40,6 @@ namespace SnowLeopard.Controls.Web.CSObject
             _bIsFullScrean = true;
             Rectangle rect = new Rectangle();
             rect = Screen.GetBounds(_ctrlFullScrean);
-
-            _browser.ShowInTaskbar = false;
-            _browser.Visible = false;
 
             frm.Show();
             frm.DesktopBounds = rect;

@@ -22,7 +22,8 @@ namespace SnowLeopard
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main(IEBrowser));
-            Application.Run(new SnowLeopard.Controls.DemoII.IEBrowser());
+            //Application.Run(new SnowLeopard.Controls.DemoII.IEBrowser());
+            Application.Run(new SnowLeopard.Controls.DemoII.RoundedText());
         }
     }
 }

@@ -72,6 +72,17 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Shortcut809Menu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shortcut809Menu.designer.cs">
+      <DependentUpon>Shortcut809Menu.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shortcut809Menu.resx">
+      <DependentUpon>Shortcut809Menu.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
